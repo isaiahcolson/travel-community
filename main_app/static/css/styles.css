@@ -1,7 +1,9 @@
 :root {
     /* colors */
     --light: #FFFFFF;
+    --light-alt: #F1F1F1;
     --dark: #2C2C2C;
+    --accent: #D92027;
 
     /* fonts */
     --general-font: 'Noto Sans JP', sans-serif;
@@ -12,7 +14,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: var(--general-font);
-    background-color: red;
+    background-color: var(--light-alt);
 }
 
 
@@ -20,14 +22,15 @@ body {
 
 
 /* SECTION base styling */
-nav {
+header {
     background-color: var(--light);
+    box-shadow: 0 2.5px 20px rgba(0,0,0,0.1);
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 15px;
+    padding: 15px 20px;
     overflow: hidden;
 }
 
@@ -40,8 +43,17 @@ nav a {
     color: var(--dark);
     text-decoration: none;
     font-family: var(--general-font);
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 700;
     text-align: center;
-    padding: 5px 16px;
+    padding: 5px 10px;
+    transition: 0.3s ease;
+}
+
+.floated-nav:hover > li > a {
+    opacity: 0.5;
+}
+
+.floated-nav:hover > li > a:hover {
+    opacity: 1;
 }
