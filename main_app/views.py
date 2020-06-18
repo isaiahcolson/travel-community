@@ -26,5 +26,18 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
 
+
+
+class User:  # Note that parens are optional if not inheriting from another class
+  def __init__(self, name, city, joined_date):
+    self.name = name
+    self.city = city
+    self.joined_date = joined_date
+
+users = [
+  User('Goofy', 'San Francisco', 4-4-2020)
+]
+
 def profile(request):
-  return render(request, 'profile.html')
+  context = { 'users' : users }
+  return render(request, 'profile.html', context)
