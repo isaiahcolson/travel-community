@@ -48,6 +48,7 @@ nav a {
     text-align: center;
     padding: 5px 10px;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .floated-nav:hover > li > a {
@@ -56,4 +57,56 @@ nav a {
 
 .floated-nav:hover > li > a:hover {
     opacity: 1;
+}
+
+.modal-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.25s;
+}
+
+.modal-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal {
+    background-color: var(--light);
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+}
+
+.modal-close {
+    position: absolute;
+    top: 2.5px;
+    right: 15px;
+    font-size: 1.75em;
+    font-weight: 700;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.modal-underlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 2;
 }
