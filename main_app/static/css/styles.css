@@ -57,3 +57,25 @@ nav a {
 .floated-nav:hover > li > a:hover {
     opacity: 1;
 }
+
+.modal-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: var(--light);
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
