@@ -10,3 +10,18 @@ $('#signup-close').click(function() {
 $('#signup-underlay').click(function() {
     $('#signup-modal').removeClass('modal-active');
 });
+
+
+
+/* login modal events */
+$('#login-modal-button').click(function() {
+    $('#login-modal').addClass('modal-active');
+});
+
+$('#login-close').click(function() {
+    $('#login-modal').removeClass('modal-active');
+});
+
+$('#login-underlay').click(function() {
+    $('#login-modal').removeClass('modal-active');
+});

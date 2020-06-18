@@ -18,8 +18,8 @@
             <ul>
                 <li style="float:left"><a href="/">Wayfarer</a></li>
                 <div class="floated-nav">
-                    <li id="signup-modal-button"><a>Sign Up</a></li>
-                    <li><a href=" {% url 'login' %} ">Log In</a></li>
+                    <li><a id="signup-modal-button">Sign Up</a></li>
+                    <li><a id="login-modal-button">Log In</a></li>
                     <li><a href="">Log Out</a></li>
                 </div>
             </ul>
@@ -42,6 +42,21 @@
                 <span class="modal-close" id="signup-close">+</span>
             </div>
             <div class="modal-underlay" id="signup-underlay"></div>
+        </div>
+        <div class="modal-bg" id="login-modal">
+            <div class="modal">
+                <h2>Log In</h2>
+                <form action="">
+
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Log In">
+                    <input type="hidden" name="next" value={{next}}>
+
+                </form>
+                <span class="modal-close" id="login-close">+</span>
+            </div>
+            <div class="modal-underlay" id="login-underlay"></div>
         </div>
     </main>
     <footer>
