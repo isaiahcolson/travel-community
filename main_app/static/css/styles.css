@@ -83,6 +83,7 @@ nav a {
     width: 30vw;
     height: 30vh;
     display: flex;
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
