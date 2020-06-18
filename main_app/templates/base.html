@@ -5,14 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Wayfarer</title>
 </head>
 <body>
     <header>
-        <a href="/">Home</a>
+        <nav>
+            <ul>
+                <li style="float:left"><a href="/">Wayfarer</a></li>
+                <div class="floated-nav">
+                    <li><a href="">Sign Up</a></li>
+                    <li><a href="">Log In</a></li>
+                    <li><a href="">Log Out</a></li>
+                </div>
+            </ul>
+        </nav>
     </header>
     <main>
         {% block content %}
