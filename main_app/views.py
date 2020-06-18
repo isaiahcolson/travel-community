@@ -10,7 +10,7 @@ def wayfarer_index(request):
   return render(request, 'wayfarer/index.html')
 
 
-# --- User Authentication --- #
+# --- User Authentication / Authorization --- #
 def signup(request):
   error_message = ''
   if request.method == 'POST':
