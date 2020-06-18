@@ -1,11 +1,47 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root {
     /* colors */
     --light: #FFFFFF;
     --dark: #2C2C2C;
+
+    /* fonts */
+    --general-font: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--general-font);
+    background-color: red;
+}
+
+
+
+
+
+/* SECTION base styling */
+nav {
+    background-color: var(--light);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+    overflow: hidden;
+}
+
+nav li {
+    float: right;
+}
+
+nav a {
+    display: block;
+    color: var(--dark);
+    text-decoration: none;
+    font-family: var(--general-font);
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px 16px;
 }
