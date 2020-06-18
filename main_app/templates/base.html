@@ -35,12 +35,12 @@
         <div class="modal-bg" id="signup-modal">
             <div class="modal">
                 <h2>Sign Up</h2>
-                <form action="">
+                <form action="{% url 'home' %}" method="POST">
 
                     {% csrf_token %}
                     {{ form.as_p }}
                     <input type="submit" value="Sign Up">
-                    <input type="hidden" name="next" value={{next}}>
+                    <input type="hidden" name="next" value="{{next}}">
 
                 </form>
                 <span class="modal-close" id="signup-close">+</span>
