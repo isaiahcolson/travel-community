@@ -7,36 +7,19 @@ def home(request):
   error_message = ''
   if request.method == 'POST':
     form = UserCreationForm(request.POST)
+    print(form.errors)
     if form.is_valid():
       user = form.save()
       login(request,user)
       return redirect('profile')
     else:
       error_message: 'Invalid sign-up, please try again!'
-  else:
-    form = UserCreationForm()
+  form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'home.html', context)
 
 def wayfarer_index(request):
   return render(request, 'wayfarer/index.html')
-
-
-# --- User Authentication / Authorization --- #
-# def signup(request):
-#   error_message = ''
-#   if request.method == 'POST':
-#     form = UserCreationForm(request.POST)
-#     if form.is_valid():
-#       user = form.save()
-#       login(request,user)
-#       return redirect('profile.html')
-#     else:
-#       error_message: 'Invalid sign-up, please try again!'
-#   else:
-#     form = UserCreationForm()
-#   context = {'form': form, 'error_message': error_message}
-#   return render(request, 'profile.html', context)
 
 def profile(request):
   return render(request, 'profile.html')
