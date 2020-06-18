@@ -34,7 +34,7 @@
                     {% csrf_token %}
                     {{ form.as_p }}
                     <input type="submit" value="Sign Up">
-                    <input type="hidden" name="next" value="{% url 'profile' %}">
+                    <input type="hidden" name="next" value="{{next}}">
 
                 </form>
                 <span class="modal-close" onclick="document.getElementById('signup-modal').classList.remove('modal-active')">+</span>
