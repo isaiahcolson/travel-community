@@ -51,14 +51,6 @@ nav a {
     cursor: pointer;
 }
 
-.floated-nav:hover > li > a {
-    opacity: 0.5;
-}
-
-.floated-nav:hover > li > a:hover {
-    opacity: 1;
-}
-
 .modal-bg {
     position: fixed;
     width: 100vw;
