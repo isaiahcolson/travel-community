@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{% static 'scripts/app.js' %}" defer></script>
     <title>Wayfarer</title>
 </head>
 <body>
@@ -16,9 +18,13 @@
             <ul>
                 <li style="float:left"><a href="/">Wayfarer</a></li>
                 <div class="floated-nav">
-                    <li><a onclick="document.getElementById('signup-modal').classList.add('modal-active')">Sign Up</a></li>
-                    <li><a href=" {% url 'login' %} ">Log In</a></li>
-                    <li><a href="">Log Out</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="">Log Out</a></li>
+                        <li><a href="/profile/">Profile</a></li>
+                    {% else %}
+                        <li><a id="signup-modal-button">Sign Up</a></li>
+                        <li><a id="login-modal-button">Log In</a></li>
+                    {% endif %}
                 </div>
             </ul>
         </nav>
@@ -37,9 +43,24 @@
                     <input type="hidden" name="next" value={{next}}>
 
                 </form>
-                <span class="modal-close" onclick="document.getElementById('signup-modal').classList.remove('modal-active')">+</span>
+                <span class="modal-close" id="signup-close">+</span>
             </div>
-            <div class="modal-underlay" onclick="document.getElementById('signup-modal').classList.remove('modal-active')"></div>
+            <div class="modal-underlay" id="signup-underlay"></div>
+        </div>
+        <div class="modal-bg" id="login-modal">
+            <div class="modal">
+                <h2>Log In</h2>
+                <form action="">
+
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Log In">
+                    <input type="hidden" name="next" value={{next}}>
+
+                </form>
+                <span class="modal-close" id="login-close">+</span>
+            </div>
+            <div class="modal-underlay" id="login-underlay"></div>
         </div>
     </main>
     <footer>

@@ -941,12 +941,14 @@ LOGIN_REDIRECT_URL = '/cats/'
 
 # we want to control what our user sees when they are not logged in vs when they are
 # in main_app/templates/base.html
-# we can add login or logout button in our nav TODO finish nav section
+# we can add login or logout button in our nav
 {% if user.is_authenticated %}
-    <li><a href="{ url 'index' }">All Cats</a></li>
-    <li><a href="">Log Out</a></li>
+    <li><a href="{% url 'index' %}">All Cats</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
 {% else %}
-    <li><a href="{url 'login' }">Login</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+    <li><a href="{% url 'signup' %}">Signup</a></li>
+{% endif %}
 # if we try to logout now, django will redirect to our django admin, but that's not what we want
 
 # in catcollector_project/settings.py at the very bottom add our logout redirect
