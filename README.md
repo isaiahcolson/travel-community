@@ -1,6 +1,6 @@
 # Project-2
 # User-Stories
-Sprint 1: Basic Auth & Profiles
+## Sprint 1: Basic Auth & Profiles
 A user should be able to:
 
 Navigate to "/" and see a basic splash page with:
