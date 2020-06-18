@@ -16,7 +16,7 @@
             <ul>
                 <li style="float:left"><a href="/">Wayfarer</a></li>
                 <div class="floated-nav">
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a onclick="document.getElementById('signup-modal').classList.add('modal-active')">Sign Up</a></li>
                     <li><a href=" {% url 'login' %} ">Log In</a></li>
                     <li><a href="">Log Out</a></li>
                 </div>
@@ -26,7 +26,7 @@
     <main>
         {% block content %}
         {% endblock %}
-        <div class="modal-bg">
+        <div class="modal-bg" id="signup-modal" onclick="this">
             <div class="modal">
                 <h2>Sign Up</h2>
             </div>
