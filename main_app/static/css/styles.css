@@ -87,4 +87,15 @@ nav a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 2.5px;
+    right: 15px;
+    font-size: 1.75em;
+    font-weight: 700;
+    transform: rotate(45deg);
+    cursor: pointer;
 }
