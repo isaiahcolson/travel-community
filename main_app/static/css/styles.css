@@ -4,6 +4,10 @@
     --light-alt: #F1F1F1;
     --dark: #2C2C2C;
     --accent: #D92027;
+    --accent2: #FF9234;
+    --accent3: #FFCD3C;
+    --accent4: #35D0BA;
+    --accent4-dark: #2EB8A3;
 
     /* fonts */
     --general-font: 'Noto Sans JP', sans-serif;
@@ -99,8 +103,8 @@ nav a:hover {
 
 .modal {
     background-color: var(--light);
-    width: 30vw;
-    height: 30vh;
+    width: 450px;
+    /* height: 30vh; */
     display: flex;
     border-radius: 10px;
     justify-content: center;
@@ -131,13 +135,57 @@ nav a:hover {
     overflow: hidden;
 }
 
-input {
-    border: none;
-    outline: none;
-    background: none;
+form {
+    width: 70%;
 }
 
-.input {
-    background: var(--light);
+input {
+    padding: 15px 20px;
+    margin: 0;
+    display: inline-block;
+    color: var(--dark);
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    border-radius: 5px;
+    /* margin: 0; */
+    /* padding: 10px; */
+    border: 2px solid var(--light-alt);
+    /* border-bottom: solid 2px var(--dark); */
+    outline: none;
+    background-color: var(--light-alt);
     width: 100%;
+    font-size: 1em;
+}
+
+input:focus {
+    border: 2px solid var(--accent4);
+}
+
+.modal h2 {
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+}
+
+form p {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    padding-bottom: 5px;
+    font-size: .75em;
+    font-weight: 700;
+}
+
+input[type=submit] {
+    margin: 25px auto;
+    display: block;
+    width: 50%;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--light);
+    background-color: var(--accent4);
+}
+
+input[type=submit]:hover {
+    background-color: var(--accent4-dark);
 }

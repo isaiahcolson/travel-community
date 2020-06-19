@@ -37,10 +37,8 @@
 
                     {% csrf_token %}
                     {% for field in form %}
-                        <div class="input">
                             <p>{{ field.label }}</p>
                             {{ field }}
-                        </div>
                     {% endfor %}
                     <input type="submit" value="Sign Up">
 
