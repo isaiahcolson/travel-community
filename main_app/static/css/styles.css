@@ -130,3 +130,14 @@ nav a:hover {
     z-index: 2;
     overflow: hidden;
 }
+
+input {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.input {
+    background: var(--light);
+    width: 100%;
+}
