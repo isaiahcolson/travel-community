@@ -31,7 +31,7 @@ def user_login(request):
   user = authenticate(username=username, password=password)
   if user is not None:
     login(request,user)
-    return redirect('profile')
+    return redirect('profile', user_id=user.pk)
   else:
     error_message: 'Invalid login, please try again!'
   context = {'error_message': error_message}
