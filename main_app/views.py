@@ -58,3 +58,7 @@ def profile(request):
   context = { 'users' : users }
   return render(request, 'profile.html', context)
 
+def posts_detail(request, post_id):
+  post = Post.objects.get(id=post_id)
+  context = { 'post' : post }
+  return render(request, 'post.html', context)
