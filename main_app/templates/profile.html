@@ -2,17 +2,24 @@
 {% block content %}
 
     
-    {% for user in users %}
+    <!-- {% for user in users %} -->
     <div class="profile-aside">
         <div class="profile-content">
-            <p>Profile</p>
-            <p>{{ user.full_name }}</p>
-            <p>@{{ user.username }}</p>
-            <p><i class="fas fa-map-marker-alt"></i>{{ user.city }} <i class="far fa-calendar-alt"></i>Joined {{user.joined_date }}</p>
-            <a href="">Edit Profile</a>
+            <div>
+                <!-- <h4>Profile</h4> -->
+                <h3>{{ user.full_name }}</h3>
+                <p>@{{ user.username }}</p>
+            </div>
+            <div>
+                <p><i class="fas fa-map-marker-alt"></i>{{ user.city }}</p>
+                <p><i class="far fa-calendar-alt"></i>Joined {{ user.joined_date }}</p>
+            </div>
+            <div>
+                <a href="">Edit Profile</a>
+            </div>
         </div>
     </div>
-{% endfor %}
+<!-- {% endfor %} -->
 
 
 {% endblock %}
