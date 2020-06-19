@@ -5,6 +5,9 @@ from django.contrib.auth.forms import UserCreationForm
 import datetime
 
 from .forms import CreateUserForm
+from .models import User
+
+
 
 def home(request):
   error_message = ''
@@ -38,22 +41,7 @@ def user_login(request):
 def wayfarer_index(request):
   return render(request, 'wayfarer/index.html')
 
-
-
-class User:  # Note that parens are optional if not inheriting from another class
-  def __init__(self, first_name, last_name, username, city, year, month, day):
-    self.first_name = first_name
-    self.last_name = last_name
-    self.full_name = f"{first_name} {last_name}"
-    self.username = username
-    self.city = city
-    joined_date = datetime.datetime(year, month, day)
-    self.joined_date = (joined_date.strftime("%B %Y"))
-
-users = [
-  User('Goofy', 'Goof', 'goofus', 'San Francisco', 2020, 6, 19)
-]
-
 def profile(request):
+  users = User.objects.all()
   context = { 'users' : users }
   return render(request, 'profile.html', context)
