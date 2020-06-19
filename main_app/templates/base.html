@@ -20,7 +20,7 @@
                 <li style="float:left"><a href="/">Wayfarer</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
-                    <li><a href="/profile/">Profile</a></li>
+                    <li><a href="{% url 'profile' user_id=user.pk %}">Profile</a></li>
                 {% else %}
                     <li><a id="signup-modal-button">Sign Up</a></li>
                     <li><a id="login-modal-button">Log In</a></li>
