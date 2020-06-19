@@ -22,7 +22,7 @@ body {
 }
 
 main {
-    margin-top: 75px;
+    /* margin-top: 75px; */
     height: 100vh;
 }
 
@@ -149,10 +149,7 @@ input {
     box-sizing: border-box;
     transition: 0.3s ease;
     border-radius: 5px;
-    /* margin: 0; */
-    /* padding: 10px; */
     border: 2px solid var(--light-alt);
-    /* border-bottom: solid 2px var(--dark); */
     outline: none;
     background-color: var(--light-alt);
     width: 100%;
@@ -208,14 +205,31 @@ input[type=submit]:hover {
 
 
 /* SECTION profile page */
-.profile-content {
+.profile-aside {
+    background-image: url('../images/wf-profile-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: var(--light);
     width: 40vw;
     height: 100vh;
     margin: 0;
-    margin-top: -100px;
+    /* margin-top: -100px; */
     padding: 0;
     float: left;
     overflow: hidden;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-content {
+    /* margin: 150px 50px; */
+}
+
+.profile-content p:nth-child(1) {
+    font-weight: 700;
+
 }

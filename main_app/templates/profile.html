@@ -3,12 +3,14 @@
 
     
     {% for user in users %}
-    <div class="profile-content">
-        <p>Profile</p>
-        <p>{{ user.full_name }}</p>
-        <p>@{{ user.username }}</p>
-        <p><i class="fas fa-map-marker-alt"></i>{{ user.city }} <i class="far fa-calendar-alt"></i>Joined {{user.joined_date }}</p>
-        <a href="">Edit Profile</a>
+    <div class="profile-aside">
+        <div class="profile-content">
+            <p>Profile</p>
+            <p>{{ user.full_name }}</p>
+            <p>@{{ user.username }}</p>
+            <p><i class="fas fa-map-marker-alt"></i>{{ user.city }} <i class="far fa-calendar-alt"></i>Joined {{user.joined_date }}</p>
+            <a href="">Edit Profile</a>
+        </div>
     </div>
 {% endfor %}
 
