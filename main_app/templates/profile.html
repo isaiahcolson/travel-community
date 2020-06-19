@@ -15,9 +15,29 @@
                 <p><i class="far fa-calendar-alt"></i>Joined {{ user.joined_date }}</p>
             </div>
             <div>
-                <a href="">Edit Profile</a>
+                <a id="edit-profile-button">Edit Profile</a>
             </div>
         </div>
+    </div>
+    <div class="modal-bg" id="edit-profile">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+            </div>
+            <form action="{% url 'home' %}" method="POST">
+
+                {% csrf_token %}
+                {% for field in form %}
+                        <p>{{ field.label }}</p>
+                        {{ field }}
+                {% endfor %}
+
+                <!-- <a class="signup-login">Already have an account? Log In</a> -->
+                <input type="submit" value="Sign Up">
+            </form>
+            <span class="modal-close" id="edit-profile-close">+</span>
+        </div>
+        <div class="modal-underlay" id="edit-profile-underlay"></div>
     </div>
 <!-- {% endfor %} -->
 
