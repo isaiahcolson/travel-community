@@ -3,7 +3,12 @@
     --light: #FFFFFF;
     --light-alt: #F1F1F1;
     --dark: #2C2C2C;
+    --dark-alt: #808080;
     --accent: #D92027;
+    --accent2: #FF9234;
+    --accent3: #FFCD3C;
+    --accent4: #35D0BA;
+    --accent4-dark: #2EB8A3;
 
     /* fonts */
     --general-font: 'Noto Sans JP', sans-serif;
@@ -18,7 +23,7 @@ body {
 }
 
 main {
-    margin-top: 75px;
+    /* margin-top: 75px; */
     height: 100vh;
 }
 
@@ -30,12 +35,13 @@ main {
 header {
     background-color: var(--light);
     box-shadow: 0 2.5px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    z-index: 3;
 }
 
 nav {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
     width: 100vw;
     background-color: var(--light);
 }
@@ -65,7 +71,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--accent);
+    color: var(--accent4);
 }
 
 #signup-modal-button {
@@ -99,15 +105,15 @@ nav a:hover {
 
 .modal {
     background-color: var(--light);
-    width: 30vw;
-    height: 30vh;
+    width: 450px;
+    /* height: 30vh; */
     display: flex;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative;
-    z-index: 3;
+    z-index: 5;
 }
 
 .modal-close {
@@ -127,5 +133,135 @@ nav a:hover {
     top: 0;
     left: 0;
     background-color: rgba(0,0,0,0.7);
-    z-index: 2;
+    z-index: 4;
+    overflow: hidden;
+}
+
+form {
+    width: 70%;
+    text-align: center;
+}
+
+input {
+    padding: 15px 20px;
+    margin: 0;
+    display: inline-block;
+    color: var(--dark);
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    border-radius: 5px;
+    border: 2px solid var(--light-alt);
+    outline: none;
+    background-color: var(--light-alt);
+    width: 100%;
+    font-size: 1em;
+}
+
+input:focus {
+    border: 2px solid var(--accent4);
+}
+
+.modal h2 {
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+}
+
+form p {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    padding-bottom: 5px;
+    font-size: .75em;
+    font-weight: 700;
+    text-align: left;
+}
+
+form a {
+    display: block;
+    margin-top: 25px;
+    color: var(--accent4);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    margin: 25px auto;
+    display: block;
+    width: 50%;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--light);
+    background-color: var(--accent4);
+    border: none;
+}
+
+input[type=submit]:hover {
+    background-color: var(--accent4-dark);
+    border: none;
+}
+
+
+
+
+
+/* SECTION profile page */
+.profile-aside {
+    background-image: url('../images/wf-profile-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--light);
+    width: 40vw;
+    height: 100vh;
+    margin: 0;
+    /* margin-top: -100px; */
+    padding: 0;
+    float: left;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-content h3 {
+    font-weight: 900;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-content h4 {
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-content > div p {
+    color: var(--dark-alt);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-content i {
+    margin-right: 7.5px;
+}
+
+.profile-content > div a {
+    padding: 5px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: var(--accent4);
+    color: var(--light);
+}
+
+.profile-content > div a:hover {
+    background-color: var(--accent4-dark);
+}
+
+.profile-content > div {
+    margin: 25px 0;
 }
