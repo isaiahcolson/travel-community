@@ -33,7 +33,10 @@
         {% endblock %}
         <div class="modal-bg" id="signup-modal">
             <div class="modal">
-                <h2>Sign Up</h2>
+                <div class="modal-header">
+                    <h2>Sign Up</h2>
+                </div>
+                
                 <form action="{% url 'home' %}" method="POST">
 
                     {% csrf_token %}
@@ -52,7 +55,9 @@
         </div>
         <div class="modal-bg" id="login-modal">
             <div class="modal">
-                <h2>Log In</h2>
+                <div class="modal-header">
+                    <h2>Log In</h2>
+                </div>
                 <form action="{% url 'user_login' %}" method="POST">
 
                     {% csrf_token %}

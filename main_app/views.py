@@ -31,7 +31,7 @@ def user_login(request):
     return redirect('profile')
   else:
     error_message: 'Invalid login, please try again!'
-  form = UserCreationForm()
+  form = CreateUserForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'home.html', context)
 
