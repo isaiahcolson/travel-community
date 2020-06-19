@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-import datetime
+
 
 from .forms import CreateUserForm
 from .models import User
@@ -40,7 +40,7 @@ def user_login(request):
 def wayfarer_index(request):
   return render(request, 'wayfarer/index.html')
 
-def profile(request):
-  users = User.objects.all()
+def profile(request, user_id):
+  users = User.objects.get(pk=user_id)
   context = { 'users' : users }
   return render(request, 'profile.html', context)
