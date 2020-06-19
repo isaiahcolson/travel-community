@@ -58,7 +58,23 @@ def profile(request):
   context = { 'users' : users }
   return render(request, 'profile.html', context)
 
+
+
+class Post:
+  def __init__(self, post_id, title, city, author, year, month, day, content):
+    self.post_id = post_id
+    self.title = title
+    self.city = city
+    self.author = author
+    post_date = datetime.datetime(year, month, day)
+    self.post_date = (post_date.strftime("%B %D %Y"))
+    self.content = content
+
+posts = [
+  Post(0, 'Review of London', 'London', 'Goofy Goof', 2020, 6, 19, 'really old; cheeky people; good pints')
+]
+
 def posts_detail(request, post_id):
-  post = Post.objects.get(id=post_id)
-  context = { 'post' : post }
+  # post = Post.objects.get(id=post_id)
+  context = { 'post' : posts[post_id] }
   return render(request, 'post.html', context)

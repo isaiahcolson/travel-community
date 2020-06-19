@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for post in posts %}
+<br/> 
+<br/> 
+<br/> 
+<div class="post-details">
+      <div>
+        <h2>{{post.title}}</h2>
+        <h4>{{post.city}}</h4>
+      </div>
+      <div>
+        Posted By:
+        <p>{{post.author}}</p>
+        <p>{{post.post_date}}</p>
+      </div>
+      <div>
+        <p>{{post.content}}</p>
+      </div>
+    </div>
+
+    <div>
+      <h1>Title</h1>
+    </div>
+{% endfor %}
+
+{% endblock %}
