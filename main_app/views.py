@@ -26,13 +26,16 @@ def wayfarer_index(request):
 
 
 class User:  # Note that parens are optional if not inheriting from another class
-  def __init__(self, name, city, joined_date):
-    self.name = name
+  def __init__(self, first_name, last_name, username, city, joined_date):
+    self.first_name = first_name
+    self.last_name = last_name
+    self.full_name = f"{first_name} {last_name}"
+    self.username = username
     self.city = city
     self.joined_date = joined_date
 
 users = [
-  User('Goofy', 'San Francisco', 4-4-2020)
+  User('Goofy', 'Goof', 'goofus', 'San Francisco', 4-4-2020)
 ]
 
 def profile(request):
