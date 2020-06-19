@@ -53,7 +53,7 @@
         <div class="modal-bg" id="login-modal">
             <div class="modal">
                 <h2>Log In</h2>
-                <form action="" method="POST">
+                <form action="{% url 'user_login' %}" method="POST">
 
                     {% csrf_token %}
                     {{ form.as_p }}
