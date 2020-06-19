@@ -3,10 +3,12 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+from .forms import CreateUserForm
+
 def home(request):
   error_message = ''
   if request.method == 'POST':
-    form = UserCreationForm(request.POST)
+    form = CreateUserForm(request.POST)
     print(form.errors)
     if form.is_valid():
       user = form.save()
@@ -14,7 +16,7 @@ def home(request):
       return redirect('profile')
     else:
       error_message: 'Invalid sign-up, please try again!'
-  form = UserCreationForm()
+  form = CreateUserForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'home.html', context)
 
