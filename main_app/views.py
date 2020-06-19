@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 import datetime
 
 from .forms import CreateUserForm
+from .forms import ReturningUserForm
 
 def home(request):
   error_message = ''
@@ -31,8 +32,8 @@ def user_login(request):
     return redirect('profile')
   else:
     error_message: 'Invalid login, please try again!'
-  form = CreateUserForm()
-  context = {'form': form, 'error_message': error_message}
+  form = ReturningUserForm()
+  context = {'error_message': error_message}
   return render(request, 'home.html', context)
 
 def wayfarer_index(request):

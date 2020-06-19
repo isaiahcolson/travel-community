@@ -36,7 +36,6 @@
                 <div class="modal-header">
                     <h2>Sign Up</h2>
                 </div>
-                
                 <form action="{% url 'home' %}" method="POST">
 
                     {% csrf_token %}
@@ -44,10 +43,9 @@
                             <p>{{ field.label }}</p>
                             {{ field }}
                     {% endfor %}
+
                     <a class="signup-login">Already have an account? Log In</a>
                     <input type="submit" value="Sign Up">
-
-
                 </form>
                 <span class="modal-close" id="signup-close">+</span>
             </div>
@@ -61,12 +59,15 @@
                 <form action="{% url 'user_login' %}" method="POST">
 
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    <p>Username</p>
+                    <input type="text" name="username">
+
+                    <p>Password</p>
+                    <input type="password" name="password1">
+
                     <a class="login-signup">Don't have an account? Sign Up</a>
                     <input type="submit" value="Log In">
                     <input type="hidden" name="next" value={{next}}>
-
-
                 </form>
                 <span class="modal-close" id="login-close">+</span>
             </div>
