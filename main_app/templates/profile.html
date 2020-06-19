@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-    <h1>Profile Page</h1>
-    {% for user in users %}
-    <div class = "card">
-        <div class = "card-content">
-            <span class = "card-title">{{ user.name }}</span>
-            <p>City:    {{ user.city }}</p>
-            <p>Joined:  {{user.joined_date }}</p>
+    
+    <!-- {% for user in users %} -->
+    <div class="profile-aside">
+        <div class="profile-content">
+            <div>
+                <!-- <h4>Profile</h4> -->
+                <h3>{{ user.full_name }}</h3>
+                <p>@{{ user.username }}</p>
+            </div>
+            <div>
+                <p><i class="fas fa-map-marker-alt"></i>{{ user.city }}</p>
+                <p><i class="far fa-calendar-alt"></i>Joined {{ user.joined_date }}</p>
+            </div>
+            <div>
+                <a href="">Edit Profile</a>
+            </div>
         </div>
     </div>
-{% endfor %}
+<!-- {% endfor %} -->
+
+    <p>{{user.name}}</p>
 
 
 {% endblock %}
