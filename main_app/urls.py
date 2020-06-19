@@ -6,5 +6,5 @@ urlpatterns = [
   path('wayfarer/', views.wayfarer_index, name='index'),
   path('profile/', views.profile, name='profile'),
   path('login/', views.user_login, name='user_login'),
-  path('posts/<int:post_id>/', views.posts_detail, name='posts_detail'
+  path('posts/<int:post_id>/', views.posts_detail, name='posts_detail')
 ]
