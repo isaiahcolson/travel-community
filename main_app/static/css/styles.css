@@ -38,7 +38,7 @@ header {
     position: fixed;
     overflow: hidden;
     top: 0;
-    z-index: 3;
+    z-index: 1;
 }
 
 nav {
@@ -96,6 +96,7 @@ nav a:hover {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.25s;
+    z-index: 5;
 }
 
 .modal-active {
@@ -106,10 +107,25 @@ nav a:hover {
 .modal {
     background-color: var(--light);
     width: 450px;
-    /* height: 30vh; */
+    height: 80vh;
+    overflow: scroll;
     display: flex;
     border-radius: 10px;
-    justify-content: center;
+    justify-content: top;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+}
+
+.modal-small {
+    background-color: var(--light);
+    width: 450px;
+    /* height: 80vh; */
+    overflow: scroll;
+    display: flex;
+    border-radius: 10px;
+    justify-content: top;
     align-items: center;
     flex-direction: column;
     position: relative;
@@ -140,6 +156,9 @@ nav a:hover {
 form {
     width: 70%;
     text-align: center;
+    margin-top: 100px;
+    margin-bottom: 25px;
+    justify-content: center;
 }
 
 input {
@@ -161,10 +180,29 @@ input:focus {
     border: 2px solid var(--accent4);
 }
 
-.modal h2 {
+.modal-header {
+    width: inherit;
+    background-color: var(--light);
+    position: fixed;
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: solid 1px rgba(0,0,0,0.1);
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-small > .modal-header {
+    width: inherit;
+    background-color: var(--light);
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: solid 1px rgba(0,0,0,0.1);
+    border-radius: 10px 10px 0 0;
+}
+
+.modal h2, .modal-small h2 {
     margin: 0;
-    margin-top: 25px;
     padding: 0;
+    /* top: 0; */
 }
 
 form p {
@@ -175,6 +213,7 @@ form p {
     font-size: .75em;
     font-weight: 700;
     text-align: left;
+    color: var(--dark-alt);
 }
 
 form a {
@@ -224,6 +263,7 @@ input[type=submit]:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* z-index: 0; */
 }
 
 .profile-content h3 {

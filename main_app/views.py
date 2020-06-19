@@ -34,8 +34,7 @@ def user_login(request):
     return redirect('profile')
   else:
     error_message: 'Invalid login, please try again!'
-  form = UserCreationForm()
-  context = {'form': form, 'error_message': error_message}
+  context = {'error_message': error_message}
   return render(request, 'home.html', context)
 
 def wayfarer_index(request):
