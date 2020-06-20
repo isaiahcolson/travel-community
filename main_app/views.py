@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserChangeForm
 import datetime
 
 from .forms import CreateUserForm
+from .forms import EditUserForm
 
 def home(request):
   error_message = ''
@@ -56,3 +58,14 @@ users = [
 def profile(request):
   context = { 'users' : users }
   return render(request, 'profile.html', context)
+
+def user_edit(request, user_id):
+  if requet.method == 'POST':
+    form = UserChangeForm(request.POST, instance=request.user)
+    if form.is_valid():
+      form.save()
+      return redirect(f'profile/{user_id}')
+  else:
+    form = UserChangeForm(instance=request.user)
+    context = {'form': form}
+    return render(request, 'profile.html', context)

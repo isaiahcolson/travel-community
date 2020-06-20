@@ -22,7 +22,7 @@
     <div class="modal-bg" id="edit-profile">
         <div class="modal">
             <div class="modal-header">
-                <h2>Sign Up</h2>
+                <h2>Update Profile</h2>
             </div>
             <form action="{% url 'home' %}" method="POST">
 
@@ -32,8 +32,10 @@
                         {{ field }}
                 {% endfor %}
 
+                <input type="text" name="username" value="{{ user.username }}">
+
                 <!-- <a class="signup-login">Already have an account? Log In</a> -->
-                <input type="submit" value="Sign Up">
+                <input type="submit" value="Update">
             </form>
             <span class="modal-close" id="edit-profile-close">+</span>
         </div>
