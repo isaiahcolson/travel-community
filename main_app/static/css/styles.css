@@ -306,3 +306,128 @@ input[type=submit]:hover {
 .profile-content > div {
     margin: 25px 0;
 }
+
+
+
+
+
+
+/* SECTION post show page */
+.post-aside {
+  background-image: url('../images/wf-profile-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--light);
+  width: 40vw;
+  height: 100vh;
+  margin: 0;
+  /* margin-top: -100px; */
+  padding: 0;
+  float: left;
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 0; */
+}
+
+.post-details h1 {
+  font-weight: 900;
+  font-size: 1.9em;
+  margin: 0;
+  padding: 0;
+}
+
+.post-details h2 {
+  font-weight: 900;
+  font-size: 1.7em;
+  margin: 0;
+  padding: 0;
+}
+
+.post-details h3 {
+  font-weight: 900;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.post-details h4 {
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+}
+
+.post-details > div p {
+  color: var(--dark-alt);
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.post-details i {
+  margin-right: 7.5px;
+}
+
+.post-details > div a {
+  padding: 5px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  background-color: var(--accent4);
+  color: var(--light);
+  cursor: pointer;
+}
+
+.post-details > div a:hover {
+  background-color: var(--accent4-dark);
+}
+
+.post-details > div {
+  margin: 25px 0;
+}
+
+
+
+
+.post-box {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 60vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  float: left;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.post-content {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--light);
+  width: 58vw;
+  height: 80vh;
+  margin-top: 50px;
+  float: left;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0 0 10px;
+}
+
+.post-article {
+  font-style: italic;
+  font-size: .9rem;
+}

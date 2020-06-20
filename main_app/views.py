@@ -66,7 +66,7 @@ class Post:
     self.city = city
     self.author = author
     post_date = datetime.datetime(year, month, day)
-    self.post_date = (post_date.strftime("%B %D %Y"))
+    self.post_date = (post_date.strftime("%B %Y"))
     self.content = content
 
 posts = [

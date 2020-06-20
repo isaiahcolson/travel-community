@@ -2,21 +2,28 @@
 
 {% block content %}
 
-<br/> 
-<br/> 
-<br/> 
-<div class="post-details">
-      <div>
-        <h2>{{post.title}}</h2>
-        <h4>{{post.city}}</h4>
-      </div>
-      <div>
-        Posted By:
-        <p>{{post.author}}</p>
-        <p>{{post.post_date}}</p>
-      </div>
-      <div>
-        <p>{{post.content}}</p>
+    <div class="post-aside">
+      <div class="post-details">
+        <div>
+          <h2>{{post.title}}</h2>
+        </div>
+        <div>
+          <p><i class="fas fa-globe-americas"></i>{{post.city}}</p>
+          <p><i class="fas fa-user-edit"></i>{{post.author}}</p>
+          <p><i class="far fa-calendar-alt"></i>{{post.post_date}}</p>
+        </div>
+        <div>
+          <a id="edit-post-button">Edit Post</a>
+        </div>
+      </div>  
+    </div>
+
+
+    <div class="post-box">
+      <div class="post-content">
+        <article class="post-article">
+          <p>"... {{post.content}} ..."</p>
+        </article>
       </div>
     </div>
 
