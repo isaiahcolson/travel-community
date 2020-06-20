@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserChangeForm
+import datetime
 
-from .forms import CreateUserForm
+from .forms import CreateUserForm, EditUserForm
 from .models import User
 
 
@@ -16,7 +18,7 @@ def home(request):
     if form.is_valid():
       user = form.save()
       login(request,user)
-      return redirect('profile')
+      return redirect('profile', user_id=user.pk)
     else:
       error_message: 'Invalid sign-up, please try again!'
   form = CreateUserForm()
@@ -44,6 +46,17 @@ def profile(request, user_id):
   context = { 'users' : users }
   return render(request, 'profile.html', context)
 
+def user_edit(request):
+  current_user = request.user
+  if request.method == 'POST':
+    edit_form = EditUserForm(request.POST, instance=request.user)
+    if edit_form.is_valid():
+      edit_form.save()
+      return redirect('profile', user_id=current_user.pk)
+  else:
+    edit_form = UserChangeForm(instance=request.user)
+  context = {'edit_form': edit_form, 'current_user': current_user}
+  return render(request, 'profile.html', context)
 
 
 class Post:
