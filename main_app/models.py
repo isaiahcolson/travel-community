@@ -19,7 +19,7 @@ class MyUser(models.Model):
     full_name = models.CharField(max_length=100)
     username = models.CharField(max_length=100)
     city = models.CharField(max_length=100, default=None)
-    # joined_date = models.DateField(default=datetime.date(), blank=True)
+    # joined_date = models.DateField(default=datetime.datetime.now(), blank=True)
 
 
 def __str__(self):

@@ -12,12 +12,56 @@
             </div>
             <div>
                 <p><i class="fas fa-map-marker-alt"></i>{{ users.city }}</p>
-                <p><i class="far fa-calendar-alt"></i>Joined {{ users.date_joined }}</p>
+                <p><i class="far fa-calendar-alt"></i>Joined {{ users.date_joined|date:"F Y" }}</p>
             </div>
             <div>
-                <a href="">Edit Profile</a>
+                <a id="edit-profile-button">Edit Profile</a>
             </div>
         </div>
+    </div>
+
+    <!-- TEMPORARY POST TITLE LIST ; UPDATE AFTER POST MODEL MIGRATION -->
+    <div class="profile-body">
+      <div class="user-articles">
+        <h3>Posts By {{ users.first_name }}</h3>
+
+        {% for post in post %}
+
+          <p><a href="/posts/{{post.post_id}}">{{post.title}}</a></p>
+
+        {% endfor %}
+
+      </div>
+    </div>
+
+
+    <div class="modal-bg" id="edit-profile">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Update Profile</h2>
+            </div>
+            <form action="{% url 'user_edit' %}" method="POST">
+
+                {% csrf_token %}
+                
+
+                <p><label for="first_name">First Name</label></p>
+                <input type="text" name="first_name" value="{{ user.first_name }}">
+                <p><label for="last_name">Last Name</label></p>
+                <input type="text" name="last_name" value="{{ user.last_name }}">
+                <p><label for="username">Username</label></p>
+                <input type="text" name="username" value="{{ user.username }}">
+                <p><label for="email">Email</label></p>
+                <input type="email" name="email" value="{{ user.email }}">
+                <p><label for="location">Current City</label></p>
+                <input type="text" name="location" value="">
+
+                <!-- <a class="signup-login">Already have an account? Log In</a> -->
+                <input type="submit" value="Update">
+            </form>
+            <span class="modal-close" id="edit-profile-close">+</span>
+        </div>
+        <div class="modal-underlay" id="edit-profile-underlay"></div>
     </div>
 
     <p>{{users.name}}</p>
