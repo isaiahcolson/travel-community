@@ -296,6 +296,7 @@ input[type=submit]:hover {
     text-decoration: none;
     background-color: var(--accent4);
     color: var(--light);
+    cursor: pointer;
 }
 
 .profile-content > div a:hover {

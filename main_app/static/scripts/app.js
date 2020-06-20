@@ -41,3 +41,21 @@ $('.login-signup').click(function() {
     $('#login-modal').removeClass('modal-active');
     $('#signup-modal').addClass('modal-active');
 });
+
+
+
+/* signup edit modal events */
+$('#edit-profile-button').click(function() {
+    $('#edit-profile').addClass('modal-active');
+    $(document.body).css('overflow', 'hidden');
+});
+
+$('#edit-profile-close').click(function() {
+    $('#edit-profile').removeClass('modal-active');
+    $(document.body).css('overflow', 'visible');
+});
+
+$('#edit-profile-underlay').click(function() {
+    $('#edit-profile').removeClass('modal-active');
+    $(document.body).css('overflow', 'visible');
+});
