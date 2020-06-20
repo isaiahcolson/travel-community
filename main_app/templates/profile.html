@@ -19,6 +19,22 @@
             </div>
         </div>
     </div>
+
+    <!-- TEMPORARY POST TITLE LIST ; UPDATE AFTER POST MODEL MIGRATION -->
+    <div class="profile-body">
+      <div class="user-articles">
+        <h3>Posts By {{ users.first_name }}</h3>
+
+        {% for post in post %}
+
+          <p><a href="/posts/{{post.post_id}}">{{post.title}}</a></p>
+
+        {% endfor %}
+
+      </div>
+    </div>
+
+
     <div class="modal-bg" id="edit-profile">
         <div class="modal">
             <div class="modal-header">

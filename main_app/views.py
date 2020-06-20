@@ -10,6 +10,22 @@ from .models import User
 from .models import MyUser
 
 
+# --- TEMPORARY POST MODEL --- #
+class Post:
+  def __init__(self, post_id, title, city, author, year, month, day, content):
+    self.post_id = post_id
+    self.title = title
+    self.city = city
+    self.author = author
+    post_date = datetime.datetime(year, month, day)
+    self.post_date = (post_date.strftime("%B %Y"))
+    self.content = content
+
+posts = [
+  Post(0, 'Review of London', 'London', 'Goofy Goof', 2020, 6, 19, 'lots of history; cheeky people; good pints'),
+  Post(1, 'Good Times in Montreal', 'Montreal', 'Goofy Goof', 2020, 6, 20, 'eclectic neighborhoods; great views from the top of Mount Royal')
+]
+
 
 def home(request):
   error_message = ''
@@ -52,7 +68,7 @@ def profile(request, user_id, city='Add Your City'):
   # print(users.city)
   # print(users)
   # print(users.city)
-  context = { 'users': users, 'city': city }
+  context = { 'users': users, 'city': city, 'post': post }
   return render(request, 'profile.html', context)
 
 def user_edit(request):
@@ -66,21 +82,6 @@ def user_edit(request):
     edit_form = UserChangeForm(instance=request.user)
   context = {'edit_form': edit_form, 'current_user': current_user}
   return render(request, 'profile.html', context)
-
-
-class Post:
-  def __init__(self, post_id, title, city, author, year, month, day, content):
-    self.post_id = post_id
-    self.title = title
-    self.city = city
-    self.author = author
-    post_date = datetime.datetime(year, month, day)
-    self.post_date = (post_date.strftime("%B %D %Y"))
-    self.content = content
-
-posts = [
-  Post(0, 'Review of London', 'London', 'Goofy Goof', 2020, 6, 19, 'really old; cheeky people; good pints')
-]
 
 def posts_detail(request, post_id):
   # post = Post.objects.get(id=post_id)
