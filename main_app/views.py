@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+import datetime
 
 
 from .forms import CreateUserForm
@@ -17,7 +18,7 @@ def home(request):
     if form.is_valid():
       user = form.save()
       login(request,user)
-      return redirect('profile')
+      return redirect('profile', user_id=user.pk)
     else:
       error_message: 'Invalid sign-up, please try again!'
   form = CreateUserForm()
