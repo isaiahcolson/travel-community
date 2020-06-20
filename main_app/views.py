@@ -70,7 +70,8 @@ class Post:
     self.content = content
 
 posts = [
-  Post(0, 'Review of London', 'London', 'Goofy Goof', 2020, 6, 19, 'really old; cheeky people; good pints')
+  Post(0, 'Review of London', 'London', 'Goofy Goof', 2020, 6, 19, 'lots of history; cheeky people; good pints'),
+  Post(1, 'Good Times in Montreal', 'Montreal', 'Goofy Goof', 2020, 6, 20, 'eclectic neighborhoods; great views from the top of Mount Royal')
 ]
 
 def posts_detail(request, post_id):
