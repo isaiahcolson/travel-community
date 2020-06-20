@@ -5,8 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm
 import datetime
 
-from .forms import CreateUserForm
-from .forms import EditUserForm
+from .forms import CreateUserForm, EditUserForm
 from .models import User
 
 
@@ -47,16 +46,17 @@ def profile(request, user_id):
   context = { 'users' : users }
   return render(request, 'profile.html', context)
 
-def user_edit(request, user_id):
-  if requet.method == 'POST':
-    form = UserChangeForm(request.POST, instance=request.user)
-    if form.is_valid():
-      form.save()
-      return redirect(f'profile/{user_id}')
+def user_edit(request):
+  current_user = request.user
+  if request.method == 'POST':
+    edit_form = EditUserForm(request.POST, instance=request.user)
+    if edit_form.is_valid():
+      edit_form.save()
+      return redirect('profile', user_id=current_user.pk)
   else:
-    form = UserChangeForm(instance=request.user)
-    context = {'form': form}
-    return render(request, 'profile.html', context)
+    edit_form = UserChangeForm(instance=request.user)
+  context = {'edit_form': edit_form, 'current_user': current_user}
+  return render(request, 'profile.html', context)
 
 
 class Post:
