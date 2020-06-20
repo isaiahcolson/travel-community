@@ -19,7 +19,7 @@ def home(request):
     if form.is_valid():
       user = form.save()
       login(request,user)
-      return redirect('profile')
+      return redirect('profile', user_id=user.pk)
     else:
       error_message: 'Invalid sign-up, please try again!'
   form = CreateUserForm()
