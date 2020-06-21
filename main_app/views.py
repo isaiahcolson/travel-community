@@ -7,6 +7,7 @@ import datetime
 
 from .forms import CreateUserForm, EditUserForm
 from .models import User
+from .models import MyUser
 
 
 # --- TEMPORARY POST MODEL --- #
@@ -57,9 +58,17 @@ def user_login(request):
 def wayfarer_index(request):
   return render(request, 'wayfarer/index.html')
 
-def profile(request, user_id):
+def profile(request, user_id, city='Add Your City'):
   users = User.objects.get(pk=user_id)
-  context = { 'users' : users, 'post' : posts }
+  users_id = MyUser.objects.get(user_id=user_id)
+  city = users_id.city
+  # users_city = MyUser.objects.get(city=city)
+  print(user_id)
+  print(users_id.city)
+  # print(users.city)
+  # print(users)
+  # print(users.city)
+  context = { 'users': users, 'city': city, 'post': post }
   return render(request, 'profile.html', context)
 
 def user_edit(request):
