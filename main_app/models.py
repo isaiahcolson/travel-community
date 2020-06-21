@@ -14,13 +14,5 @@ import datetime
 #     self.joined_date = joined_date.strftime("%M %D %Y")
 
 class MyUser(models.Model):
-    first_name = models.CharField(max_length=100, default=None)
-    last_name = models.CharField(max_length=100)
-    full_name = models.CharField(max_length=100)
-    username = models.CharField(max_length=100)
-    city = models.CharField(max_length=100, default=None)
-    # joined_date = models.DateField(default=datetime.datetime.now(), blank=True)
-
-
-def __str__(self):
-        return self.name
+    city = models.CharField(max_length=100, default='Add Your City')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='MyUser')
