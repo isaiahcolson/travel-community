@@ -62,21 +62,20 @@ def profile(request, user_id, city='Add Your City'):
   users = User.objects.get(pk=user_id)
   users_id = MyUser.objects.get(user_id=user_id)
   city = users_id.city
-  # users_city = MyUser.objects.get(city=city)
-  print(user_id)
-  print(users_id.city)
-  # print(users.city)
-  # print(users)
-  # print(users.city)
-  context = { 'users': users, 'city': city, 'post': post }
+  context = { 'users': users, 'city': city, 'post': posts }
   return render(request, 'profile.html', context)
 
 def user_edit(request):
+  new_city = request.POST.get('city', '')
   current_user = request.user
+  users_id = MyUser.objects.get(user_id=current_user.id)
+  users_id.city = new_city
+  users_id.save(update_fields=['city'])
   if request.method == 'POST':
     edit_form = EditUserForm(request.POST, instance=request.user)
     if edit_form.is_valid():
       edit_form.save()
+      # city = users_id.city
       return redirect('profile', user_id=current_user.pk)
   else:
     edit_form = UserChangeForm(instance=request.user)
