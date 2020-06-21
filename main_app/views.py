@@ -2,10 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-<<<<<<< HEAD
-=======
 from django.contrib.auth.forms import UserChangeForm
->>>>>>> 3d3c1a79c0cb62d3e7bf888706cfcb6041b0ecd1
 import datetime
 
 from .forms import CreateUserForm, EditUserForm
