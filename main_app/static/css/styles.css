@@ -24,11 +24,6 @@ body {
     background-color: var(--light);
 }
 
-main {
-    /* margin-top: 75px; */
-    /* min-height: 100vh; */
-}
-
 
 
 
@@ -203,7 +198,6 @@ input:focus {
 .modal h2, .modal-small h2 {
     margin: 0;
     padding: 0;
-    /* top: 0; */
 }
 
 form p {
@@ -318,20 +312,13 @@ input[type=submit]:hover {
     font-size: 1.1em;
     font-family: var(--serif-font);
     background-color: var(--light);
-    /* width: 100%; */
     height: 100%;
     margin: 0;
     margin-left: 40vw;
-    /* margin-top: 200px; */
     padding: 100px 7.5vw 0 7.5vw;
-    /* float: right; */
-    /* overflow: hidden; */
-    /* position: fixed; */
-    /* right: 0; */
     display: flex;
     flex-direction: column;
     justify-content: top;
-    /* align-items: center; */
 }
 
 .profile-body h1 {
@@ -416,4 +403,12 @@ input[type=submit]:hover {
 
 .post-content p {
     margin-top: 25px;
+}
+
+.delete-post-content {
+    width: 70%;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 25px;
+    justify-content: center;
 }

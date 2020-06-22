@@ -14,15 +14,31 @@
     <div class="post-content">
       <div class="post-content__links">
         <a id="edit-post-button">Edit</a>
-        <a >Delete</a>
+        <a id="delete-post-button">Delete</a>
       </div>
       <p>"... {{ post.content }} ..."</p>
     </div>
   </div>
 
+  <div class="modal-bg" id="delete-post">
+    <div class="modal-small">
+        <div class="modal-header">
+          <h2>Delete Post</h2>
+        </div>
+        <div class="delete-post-content">
+          <p>You are about to delete the post "{{ post.title }}". Are you sure you would like to proceed?</p>
+          <div class="delete-post-content__buttons">
+            <a class="delete-post-close">No</a>
+            <a >Yes</a>
+          </div>
+        </div>
+        <span class="modal-close delete-post-close">+</span>
+    </div>
+    <div class="modal-underlay" id="delete-post-underlay"></div>
+</div>
+
   <div class="footer">
     <div class="footer-content">
-      <p>Footer Test</p>
     </div>
   </div>
 
