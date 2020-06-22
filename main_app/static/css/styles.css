@@ -429,10 +429,20 @@ input[type=submit]:hover {
     background-color: var(--light-alt);
     border-radius: 25px;
     color: var(--dark);
+    transition: 0.2s ease;
+    font-weight: 700;
+}
+
+.delete-post-content a:hover {
+    background-color: #d6d6d6;
 }
 
 #delete-post-confirm {
     background-color: var(--accent);
     border-radius: 25px;
     color: var(--light);
+}
+
+#delete-post-confirm:hover {
+    background-color: var(--accent-dark);
 }
