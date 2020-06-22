@@ -1,31 +1,47 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-    <div class="post-aside">
-      <div class="post-details">
-        <div>
-          <h2>{{post.title}}</h2>
-        </div>
-        <div>
-          <p><i class="fas fa-globe-americas"></i>{{post.city}}</p>
-          <p><i class="fas fa-user-edit"></i>{{post.author}}</p>
-          <p><i class="far fa-calendar-alt"></i>{{post.post_date}}</p>
-        </div>
-        <div>
-          <a id="edit-post-button">Edit Post</a>
-        </div>
-      </div>  
+
+
+  <div class="post-container">
+    <div class="post-header">
+      <h1>{{ post.title }}</h1>
+      <p><i class="fas fa-map-marker-alt"></i>{{ post.city }}</p>
+      <p>{{ post.author }}</p>
+      <!-- <p>{{ post.author.username }}</p> -->
+      <p>{{ post.post_date }}</p>
     </div>
-
-
-    <div class="post-box">
-      <div class="post-content">
-        <article class="post-article">
-          <p>"... {{post.content}} ..."</p>
-        </article>
+    <div class="post-content">
+      <div class="post-content__links">
+        <a id="edit-post-button">Edit</a>
+        <a id="delete-post-button">Delete</a>
       </div>
+      <p>"... {{ post.content }} ..."</p>
     </div>
+  </div>
+
+  <div class="modal-bg" id="delete-post">
+    <div class="modal-small">
+        <div class="modal-header">
+          <h2>Delete Post?</h2>
+        </div>
+        <div class="delete-post-content">
+          <p>You are about to delete the post "{{ post.title }}". This cannot be undone, are you sure you would like to proceed?</p>
+          <div class="delete-post-content__buttons">
+            <a class="delete-post-close">Cancel</a>
+            <a id="delete-post-confirm">Delete</a>
+          </div>
+        </div>
+        <span class="modal-close delete-post-close">+</span>
+    </div>
+    <div class="modal-underlay" id="delete-post-underlay"></div>
+</div>
+
+  <div class="footer">
+    <div class="footer-content">
+    </div>
+  </div>
+
 
 
 {% endblock %}

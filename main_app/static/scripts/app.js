@@ -59,3 +59,21 @@ $('#edit-profile-underlay').click(function() {
     $('#edit-profile').removeClass('modal-active');
     $(document.body).css('overflow', 'visible');
 });
+
+
+
+/* delete post modal events */
+$('#delete-post-button').click(function() {
+    $('#delete-post').addClass('modal-active');
+    $(document.body).css('overflow', 'hidden');
+});
+
+$('.delete-post-close').click(function() {
+    $('#delete-post').removeClass('modal-active');
+    $(document.body).css('overflow', 'visible');
+});
+
+$('#delete-post-underlay').click(function() {
+    $('#delete-post').removeClass('modal-active');
+    $(document.body).css('overflow', 'visible');
+});
