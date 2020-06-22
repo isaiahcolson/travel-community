@@ -18,10 +18,10 @@
 6. [x] See the site-wide header on every page with:
 - [x] A link to "Log Out" if they're logged in.
 - [x] Links to "Log In" and "Sign Up" if they're logged out.
-7. [ ] Update their profile by making changes to their name and/or current city.
-8. [ ] See the titles of all the posts they've contributed (start with pre-seeded data).
-9. [ ] Click on the title of one of their posts and be redirected to a "show" page for that post.
-10. [ ] View post "show" pages with title, author, and content.
+7. [x] Update their profile by making changes to their name and/or current city.
+8. [x] See the titles of all the posts they've contributed (start with pre-seeded data).
+9. [x] Click on the title of one of their posts and be redirected to a "show" page for that post.
+10. [x] View post "show" pages with title, author, and content.
 
 ### Bonuses
 
@@ -38,19 +38,19 @@
 
 **A user should be able to:**
 
-1. View the "San Francisco" page (at "/cities/1") including:
-- The site-wide header.
-- The name of the city.
-- An iconic photo of the city.
-2. View a list of posts on the San Francisco page:
-- Sorted by newest first.
-- With the post titles linked to the individual post "show" pages.
-3. Use an "Add New Post" button on the San Francisco city page to pull up the new post form.
-4. Create a new post for San Francisco<!--(**Hint:** <a href="http://guides.rubyonrails.org/routing.html#nested-resources" target="_blank">nested resources</a>)-->.
-5. Click "Edit" on ANY individual post, and be redirected to the edit form.
-6. Click "delete" on ANY individual post, then:
-- See a pop-up that says: "Are you sure you want to delete #{title}?"
-- If the user confirms, delete the post.
+1. [ ] View the "San Francisco" page (at "/cities/1") including:
+- [ ] The site-wide header.
+- [ ] The name of the city.
+- [ ] An iconic photo of the city.
+2. [ ] View a list of posts on the San Francisco page:
+- [ ] Sorted by newest first.
+- [ ] With the post titles linked to the individual post "show" pages.
+3. [ ] Use an "Add New Post" button on the San Francisco city page to pull up the new post form.
+4. [ ] Create a new post for San Francisco<!--(**Hint:** <a href="http://guides.rubyonrails.org/routing.html#nested-resources" target="_blank">nested resources</a>)-->.
+5. [ ] Click "Edit" on ANY individual post, and be redirected to the edit form.
+6. [ ] Click "delete" on ANY individual post, then:
+- [ ] See a pop-up that says: "Are you sure you want to delete #{title}?"
+- [ ] If the user confirms, delete the post.
 
 ### Bonuses
 
