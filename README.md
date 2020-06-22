@@ -39,7 +39,7 @@
 **A user should be able to:**
 
 1. [ ] View the "San Francisco" page (at "/cities/1") including:
-- [ ] The site-wide header.
+- [x] The site-wide header.
 - [ ] The name of the city.
 - [ ] An iconic photo of the city.
 2. [ ] View a list of posts on the San Francisco page:
@@ -49,7 +49,7 @@
 4. [ ] Create a new post for San Francisco<!--(**Hint:** <a href="http://guides.rubyonrails.org/routing.html#nested-resources" target="_blank">nested resources</a>)-->.
 5. [ ] Click "Edit" on ANY individual post, and be redirected to the edit form.
 6. [ ] Click "delete" on ANY individual post, then:
-- [ ] See a pop-up that says: "Are you sure you want to delete #{title}?"
+- [x] See a pop-up that says: "Are you sure you want to delete #{title}?"
 - [ ] If the user confirms, delete the post.
 
 ### Bonuses
