@@ -26,6 +26,18 @@ posts = [
   Post(1, 'Good Times in Montreal', 'Montreal', 'Goofy Goof', 2020, 6, 20, 'eclectic neighborhoods; great views from the top of Mount Royal')
 ]
 
+# --- TEMPORARY CITY MODEL --- #
+class City:
+  def __init__(self, city_id, name, country, posts):
+    self.city_id = city_id
+    self.name = name
+    self.country = country
+    self.posts = posts
+
+cities = [
+  City(0, 'San Francisco', 'United States', 'list of posts'),
+  City(1, 'Houston', 'United States', 'list of posts')
+]  
 
 def home(request):
   error_message = ''
@@ -89,3 +101,7 @@ def posts_detail(request, post_id):
   # post = Post.objects.get(id=post_id)
   context = { 'post' : posts[post_id] }
   return render(request, 'post.html', context)
+
+def cities_detail(request, city_id):
+  context = { 'city' : cities, 'obj_city' : cities[city_id] }
+  return render(request, 'city.html', context)

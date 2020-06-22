@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="post-aside">
+    <div class="post-details">
+      <div>
+        <h3>Cities</h3>
+    {% for city in city %}
+        <p>{{city.name}}</p>
+    {% endfor %}
+        <div>
+            <p><a href=""></a></p>
+        </div>
+      <div>
+        <a id="edit-post-button">Edit Post</a>
+      </div>
+    </div>  
+  </div>
+
+
+  <div class="post-box">
+    <div class="post-content">
+      <article class="post-article">
+        <h1>{{obj_city.name}}</h1>
+        <p>{{obj_city.country}}</p>
+        <p>"... {{obj_city.posts}} ..."</p>
+      </article>
+    </div>
+  </div>
+
+
+
+{% endblock %}
