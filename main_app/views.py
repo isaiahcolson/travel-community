@@ -33,7 +33,10 @@ def home(request):
     form = CreateUserForm(request.POST)
     print(form.errors)
     if form.is_valid():
-      user = form.save()
+      user = form.save(commit=False)
+      user.save()
+      new_user = MyUser(user_id=user)
+      new_user.save()
       login(request,user)
       return redirect('profile', user_id=user.pk)
     else:
