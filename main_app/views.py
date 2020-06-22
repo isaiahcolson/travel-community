@@ -104,3 +104,7 @@ def posts_edit(request, post_id):
   context = {'post': post, 'post_form': post_form}
   return render(request, 'posts/edit.html', context)
 
+# update redirect to city index/detail page once city model and detail page is created
+def posts_delete(request, post_id):
+  Post.objects.get(id=post_id).delete()
+  return redirect('home')
