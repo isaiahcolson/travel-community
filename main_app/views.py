@@ -85,6 +85,8 @@ def user_edit(request):
   context = {'edit_form': edit_form, 'current_user': current_user}
   return render(request, 'profile.html', context)
 
+
+# --- POST ROUTES (R.U.D.) --- #
 def posts_detail(request, post_id):
   post = User_Post.objects.get(id=post_id)
   context = { 'post' : post }
@@ -101,3 +103,4 @@ def posts_edit(request, post_id):
     post_form = Post_Form(instance=post)
   context = {'post': post, 'post_form': post_form}
   return render(request, 'posts/edit.html', context)
+
