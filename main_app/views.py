@@ -89,3 +89,8 @@ def posts_detail(request, post_id):
   post = User_Post.objects.get(id=post_id)
   context = { 'post' : post }
   return render(request, 'post.html', context)
+
+def posts_edit(request, post_id):
+  post = User_Post.objects.get(id=post_id)
+  # if request.method == 'POST':
+
