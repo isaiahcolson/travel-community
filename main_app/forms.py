@@ -14,7 +14,8 @@ class EditUserForm(forms.ModelForm):
         model = User
         fields = ['first_name', 'last_name', 'username', 'email']
 
+# remove city from Post_Form fields after city model creation
 class Post_Form(ModelForm):
-  class Meta:
-    model = User_Post
-    fields = ['title', 'date', 'city', 'content']
+    class Meta:
+        model = User_Post
+        fields = ['title', 'date', 'city', 'content']

@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm
 import datetime
 
-from .forms import CreateUserForm, EditUserForm
+from .forms import CreateUserForm, EditUserForm, Post_Form
 from .models import User
 from .models import MyUser, User_Post
 
@@ -88,9 +88,16 @@ def user_edit(request):
 def posts_detail(request, post_id):
   post = User_Post.objects.get(id=post_id)
   context = { 'post' : post }
-  return render(request, 'post.html', context)
+  return render(request, 'posts/detail.html', context)
 
 def posts_edit(request, post_id):
   post = User_Post.objects.get(id=post_id)
-  # if request.method == 'POST':
-
+  if request.method == 'POST':
+    post_form = Post_Form(request.POST, instance=post)
+    if post_form.is_valid():
+      post_form.save()
+      return redirect('posts_detail', post_id=post_id)
+  else:
+    post_form = Post_Form(instance=post)
+  context = {'post': post, 'post_form': post_form}
+  return render(request, 'posts/edit.html', context)
