@@ -14,7 +14,11 @@
 2. [x] Sign up for an account.
 3. [x] Log in to their account if they already have one.
 4. [x] Be redirected to their public profile page after logging in.
+<<<<<<< HEAD
 5. [] On their public profile page, see their name, the current city they have set in their profile, and their join date.
+=======
+5. [x] On their public profile page, see their name, the current city they have set in their profile, and their join date.
+>>>>>>> submaster
 6. [x] See the site-wide header on every page with:
 - [x] A link to "Log Out" if they're logged in.
 - [x] Links to "Log In" and "Sign Up" if they're logged out.
@@ -27,10 +31,10 @@
 
 **A user should be able to:**
 
-1. See a "default" profile photo on their profile page before adding their own photo.
-2. Update their profile photo (consider using Paperclip or Uploadcare).
-3. See their profile photo next to their posts.
-4. Receive a welcome email after creating an account.
+1. [ ] See a "default" profile photo on their profile page before adding their own photo.
+2. [ ] Update their profile photo (consider using Paperclip or Uploadcare).
+3. [ ] See their profile photo next to their posts.
+4. [ ] Receive a welcome email after creating an account.
 
 ---
 

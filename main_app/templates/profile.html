@@ -23,11 +23,11 @@
     <!-- TEMPORARY POST TITLE LIST ; UPDATE AFTER POST MODEL MIGRATION -->
     <div class="profile-body">
       <div class="user-articles">
-        <h3>Posts By {{user.first_name}}</h3>
+        <h1>Posts By {{ users.first_name }}</h1>
 
         {% for post in post %}
 
-          <p><a href="/posts/{{post.post_id}}">{{post.title}}</a></p>
+          <p>June 2020 - <a href="/posts/{{post.post_id}}">{{post.title}}</a></p>
 
         {% endfor %}
 
