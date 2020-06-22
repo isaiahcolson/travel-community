@@ -33,7 +33,6 @@ def home(request):
     form = CreateUserForm(request.POST)
     print(form.errors)
     if form.is_valid():
-      user = form.save(commit=False)
       user.save()
       new_user = MyUser(user_id=user)
       new_user.save()

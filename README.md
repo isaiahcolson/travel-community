@@ -14,7 +14,7 @@
 2. [x] Sign up for an account.
 3. [x] Log in to their account if they already have one.
 4. [x] Be redirected to their public profile page after logging in.
-5. [ ] On their public profile page, see their name, the current city they have set in their profile, and their join date.
+5. [x] On their public profile page, see their name, the current city they have set in their profile, and their join date.
 6. [x] See the site-wide header on every page with:
 - [x] A link to "Log Out" if they're logged in.
 - [x] Links to "Log In" and "Sign Up" if they're logged out.
