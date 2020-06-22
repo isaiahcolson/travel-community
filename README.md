@@ -40,7 +40,7 @@
 
 1. [ ] View the "San Francisco" page (at "/cities/1") including:
 - [x] The site-wide header.
-- [ ] The name of the city.
+- [x] The name of the city.
 - [ ] An iconic photo of the city.
 2. [ ] View a list of posts on the San Francisco page:
 - [ ] Sorted by newest first.
