@@ -23,13 +23,13 @@
   <div class="modal-bg" id="delete-post">
     <div class="modal-small">
         <div class="modal-header">
-          <h2>Delete Post</h2>
+          <h2>Delete Post?</h2>
         </div>
         <div class="delete-post-content">
-          <p>You are about to delete the post "{{ post.title }}". Are you sure you would like to proceed?</p>
+          <p>You are about to delete the post "{{ post.title }}". This cannot be undone, are you sure you would like to proceed?</p>
           <div class="delete-post-content__buttons">
-            <a class="delete-post-close">No</a>
-            <a >Yes</a>
+            <a class="delete-post-close">Cancel</a>
+            <a id="delete-post-confirm">Delete</a>
           </div>
         </div>
         <span class="modal-close delete-post-close">+</span>
