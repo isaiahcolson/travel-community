@@ -5,9 +5,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm
 import datetime
 
-from .forms import CreateUserForm, EditUserForm
+from .forms import CreateUserForm, EditUserForm, Post_Form
 from .models import User
-from .models import MyUser
+from .models import MyUser, User_Post
 
 
 # --- TEMPORARY POST MODEL --- #
@@ -85,7 +85,26 @@ def user_edit(request):
   context = {'edit_form': edit_form, 'current_user': current_user}
   return render(request, 'profile.html', context)
 
+
+# --- POST ROUTES (R.U.D.) --- #
 def posts_detail(request, post_id):
-  # post = Post.objects.get(id=post_id)
-  context = { 'post' : posts[post_id] }
-  return render(request, 'post.html', context)
+  post = User_Post.objects.get(id=post_id)
+  context = { 'post' : post }
+  return render(request, 'posts/detail.html', context)
+
+def posts_edit(request, post_id):
+  post = User_Post.objects.get(id=post_id)
+  if request.method == 'POST':
+    post_form = Post_Form(request.POST, instance=post)
+    if post_form.is_valid():
+      post_form.save()
+      return redirect('posts_detail', post_id=post_id)
+  else:
+    post_form = Post_Form(instance=post)
+  context = {'post': post, 'post_form': post_form}
+  return render(request, 'posts/edit.html', context)
+
+# update redirect to city index/detail page once city model and detail page is created
+def posts_delete(request, post_id):
+  Post.objects.get(id=post_id).delete()
+  return redirect('home')
