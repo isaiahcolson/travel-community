@@ -26,7 +26,7 @@ body {
 
 main {
     /* margin-top: 75px; */
-    height: 100vh;
+    /* min-height: 100vh; */
 }
 
 
@@ -241,8 +241,9 @@ input[type=submit]:hover {
     border: none;
 }
 
-footer {
-    position: fixed;
+.footer {
+    /* position: absolute; */
+    padding: 25px;
     background-color: var(--light-alt);
     left: 0;
     bottom: 0;
