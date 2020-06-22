@@ -7,7 +7,7 @@ import datetime
 
 from .forms import CreateUserForm, EditUserForm
 from .models import User
-from .models import MyUser
+from .models import MyUser, User_Post
 
 
 # --- TEMPORARY POST MODEL --- #
@@ -86,6 +86,6 @@ def user_edit(request):
   return render(request, 'profile.html', context)
 
 def posts_detail(request, post_id):
-  # post = Post.objects.get(id=post_id)
-  context = { 'post' : posts[post_id] }
+  post = User_Post.objects.get(id=post_id)
+  context = { 'post' : post }
   return render(request, 'post.html', context)
