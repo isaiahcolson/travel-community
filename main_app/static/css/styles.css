@@ -242,12 +242,9 @@ input[type=submit]:hover {
 }
 
 .footer {
-    /* position: absolute; */
+    height: 20vh;
     padding: 25px;
     background-color: var(--light-alt);
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 
 
@@ -358,9 +355,9 @@ input[type=submit]:hover {
 
 /* SECTION post show page */
 .post-container {
-    margin: 100px auto;
+    margin: 100px auto 50px auto;
     width: 640px;
-    
+    min-height: 50vh;
 }
 
 .post-container h1 {
