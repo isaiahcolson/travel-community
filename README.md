@@ -27,10 +27,10 @@
 
 **A user should be able to:**
 
-1. See a "default" profile photo on their profile page before adding their own photo.
-2. Update their profile photo (consider using Paperclip or Uploadcare).
-3. See their profile photo next to their posts.
-4. Receive a welcome email after creating an account.
+1. [ ] See a "default" profile photo on their profile page before adding their own photo.
+2. [ ] Update their profile photo (consider using Paperclip or Uploadcare).
+3. [ ] See their profile photo next to their posts.
+4. [ ] Receive a welcome email after creating an account.
 
 ---
 
