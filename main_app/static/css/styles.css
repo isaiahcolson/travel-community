@@ -241,6 +241,14 @@ input[type=submit]:hover {
     border: none;
 }
 
+footer {
+    position: fixed;
+    background-color: var(--light-alt);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 
 
 
