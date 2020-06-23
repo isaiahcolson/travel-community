@@ -1,0 +1,26 @@
+<div class="cities-list-container">
+    <div class="cities-list">
+
+        <h2>Cities</h2>
+        {% for city in city %}
+          {% if city_id.id == city.id %}
+            <div>
+                <a href="{% url 'city_detail' city.id %}">
+                    <div class="city-name-active">
+                        {{ city.name }}
+                    </div>
+                </a>
+            </div>
+            {% else %}
+            <div>
+              <a href="{% url 'city_detail' city.id %}">
+                  <div class="city-name">
+                      {{ city.name }}
+                  </div>
+              </a>
+          </div>
+          {% endif %}
+        {% endfor %}
+
+    </div>
+</div>

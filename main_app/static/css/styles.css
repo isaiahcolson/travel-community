@@ -306,8 +306,6 @@ input[type=submit]:hover {
     margin: 25px 0;
 }
 
-
-
 .profile-body {
     font-size: 1.1em;
     font-family: var(--serif-font);
@@ -445,4 +443,93 @@ input[type=submit]:hover {
 
 #delete-post-confirm:hover {
     background-color: var(--accent-dark);
+}
+
+
+
+
+
+/* SECTION city details and show pages */
+.cities-list-container {
+    background-color: var(--dark);
+    height: 100vh;
+    width: 360px;
+    position: absolute;
+}
+
+.cities-list-container h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--light);
+    font-weight: 400;
+    padding-left: 25px;
+}
+
+.cities-list {
+    padding: 100px 25px;
+}
+
+.city-name {
+    background-color: var(--dark);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.city-name-active {
+    background-color: var(--accent);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.cities-list a {
+    font-size: 2em;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--light);
+}
+
+.city-body {
+    font-size: 1.1em;
+    font-family: var(--general-font);
+    background-color: var(--light);
+    height: 100%;
+    margin: 0;
+    /* margin-left: 40vw; */
+    /* padding: 100px 7.5vw 0 7.5vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+
+.city-header {
+    /* width: 100vw; */
+    margin-left: 360px;
+    padding: 100px 7.5vw 50px 7.5vw;
+    background-image: url('../images/wf-sf-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.city-header h1 {
+    color: var(--accent);
+    font-size: 2.75em;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+
+.city-header p {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.city-posts {
+    margin-left: 40vw;
 }
