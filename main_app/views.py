@@ -7,7 +7,7 @@ import datetime
 
 from .forms import CreateUserForm, EditUserForm, Post_Form
 from .models import User
-from .models import MyUser, User_Post
+from .models import MyUser, User_Post, City
 
 
 # --- TEMPORARY POST MODEL --- #
@@ -102,6 +102,20 @@ def user_edit(request):
     edit_form = UserChangeForm(instance=request.user)
   context = {'edit_form': edit_form, 'current_user': current_user}
   return render(request, 'profile.html', context)
+
+
+# --- CITY ROUTES --- #
+# Define the CITY_index view
+def city_index(request):
+  city = City.objects.all()
+  context = { 'city' : city }
+  return render(request, 'city.html', context)
+
+# Define the CITY_detail view
+def city_detail(request, city_id):
+  city = City.objects.get(id=city_id)
+  context = { 'city' : city }
+  return render(request, 'city/detail.html', context)
 
 
 # --- POST ROUTES (R.U.D.) --- #

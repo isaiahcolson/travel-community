@@ -14,7 +14,11 @@
 2. [x] Sign up for an account.
 3. [x] Log in to their account if they already have one.
 4. [x] Be redirected to their public profile page after logging in.
+<<<<<<< HEAD
+5. [] On their public profile page, see their name, the current city they have set in their profile, and their join date.
+=======
 5. [x] On their public profile page, see their name, the current city they have set in their profile, and their join date.
+>>>>>>> submaster
 6. [x] See the site-wide header on every page with:
 - [x] A link to "Log Out" if they're logged in.
 - [x] Links to "Log In" and "Sign Up" if they're logged out.
@@ -38,7 +42,7 @@
 
 **A user should be able to:**
 
-1. [ ] View the "San Francisco" page (at "/cities/1") including:
+1. [x] View the "San Francisco" page (at "/cities/1") including:
 - [x] The site-wide header.
 - [x] The name of the city.
 - [ ] An iconic photo of the city.
@@ -50,7 +54,7 @@
 5. [ ] Click "Edit" on ANY individual post, and be redirected to the edit form.
 6. [ ] Click "delete" on ANY individual post, then:
 - [x] See a pop-up that says: "Are you sure you want to delete #{title}?"
-- [ ] If the user confirms, delete the post.
+- [x] If the user confirms, delete the post.
 
 ### Bonuses
 

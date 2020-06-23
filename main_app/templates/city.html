@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for city in city %}
+  <div class="profile-body">
+    <a href="{% url 'city_detail' city.id %}">
+      <div class="user-articles">
+      {{ city.name }}
+
+      </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}
