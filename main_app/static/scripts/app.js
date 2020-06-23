@@ -62,6 +62,23 @@ $('#edit-profile-underlay').click(function() {
 
 
 
+/* create post modal events */
+$('#create-post-button').click(function() {
+  $('#create-post').addClass('modal-active');
+  $(document.body).css('overflow', 'hidden');
+});
+
+$('#create-post-close').click(function() {
+  $('#create-post').removeClass('modal-active');
+  $(document.body).css('overflow', 'visible');
+});
+
+$('#create-post-underlay').click(function() {
+  $('#create-post').removeClass('modal-active');
+  $(document.body).css('overflow', 'visible');
+});
+
+
 /* delete post modal events */
 $('#delete-post-button').click(function() {
     $('#delete-post').addClass('modal-active');
