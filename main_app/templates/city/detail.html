@@ -6,13 +6,15 @@
   {% include '../partials/city_nav.html' %}
 
   <div class="city-body">
-    <div class="city-header">
-      <h1>{{ city_id.name }}</h1>
-      <p>{{ city_id.country }}</p>
-    </div>
-    <div class="city-posts">
-      <!-- <a id="create-post-button">+</a> -->
-    </div>
+    {% if city_id.id == city.id %}
+      <div class="city-header">
+        <h1>{{ city_id.name }}</h1>
+        <p>{{ city_id.country }}</p>
+      </div>
+      <div class="city-posts">
+        <a id="create-post-button">+</a>
+      </div>
+    {% endif %}
   </div>
 
 
