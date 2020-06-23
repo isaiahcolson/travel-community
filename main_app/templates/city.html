@@ -2,33 +2,19 @@
 {% block content %}
 
 
-<div class="post-aside">
-    <div class="post-details">
-      <div>
-        <h3>Cities</h3>
-    {% for city in city %}
-        <p>{{city.name}}</p>
-    {% endfor %}
-        <div>
-            <p><a href=""></a></p>
-        </div>
-      <div>
-        <a id="edit-post-button">Edit Post</a>
-      </div>
-    </div>  
+<div class="profile-body">
+  <div class="user-articles">
+  {% for city in city %}
+    <h1>{{ city.name }}</h1>
+    <p>{{ city.country }}</p>
+    <img src="" alt="">
+  {% endfor %}
+
+  
+    <!-- Replace list of cities with list of posts -->
+      <p>My City is - >{{ city.name }}</p>
+
   </div>
-
-
-  <div class="post-box">
-    <div class="post-content">
-      <article class="post-article">
-        <h1>{{obj_city.name}}</h1>
-        <p>{{obj_city.country}}</p>
-        <p>"... {{obj_city.posts}} ..."</p>
-      </article>
-    </div>
-  </div>
-
-
+</div>
 
 {% endblock %}

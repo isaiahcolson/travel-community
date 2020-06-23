@@ -20,3 +20,11 @@ class User_Post(models.Model):
 
   class Meta:
     ordering = ['-date', 'city']
+
+
+class City(models.Model):
+  name = models.CharField(max_length=100)
+  country = models.CharField(max_length=100)
+
+  def __str__(self):
+    return self.name
