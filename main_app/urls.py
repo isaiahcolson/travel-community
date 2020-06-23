@@ -13,5 +13,5 @@ urlpatterns = [
   path('posts/<int:post_id>/edit', views.posts_edit, name='posts_edit'),
   path('posts/<int:post_id>/delete', views.posts_delete, name='posts_delete'),
   path('cities/', views.city_index, name='city_index'),
-  path('cities/<int:city_id>/', views.city_detail, name="city_detail")
+  path('cities/<int:city_id>/', views.city_detail, name="city_detail"),
 ]
