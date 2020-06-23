@@ -60,11 +60,30 @@ def user_login(request):
 def wayfarer_index(request):
   return render(request, 'wayfarer/index.html')
 
+
+def add_post(request):
+  if request.method == 'POST':
+    post_form = Post_Form(request.POST)
+    if post_form.is_valid():
+      new_post = post_form.save(commit=False)
+      new_post.user = request.user
+      # new_post.save(commit=False)
+      # new_post.city = request.city
+      new_post.save()
+      return redirect('home')
+  else:
+    post_form = Post_Form()
+  posts = User_Post.objects.filter(user=request.user)
+  context = { 'post': posts, 'post_form': post_form }
+  return render(request, 'profile.html', context)
+
+
 def profile(request, user_id, city='Add Your City'):
   users = User.objects.get(pk=user_id)
   users_id = MyUser.objects.get(user_id=user_id)
   city = users_id.city
-  context = { 'users': users, 'city': city, 'post': posts }
+  post_form = Post_Form()
+  context = { 'users': users, 'city': city, 'post': posts, 'post_form': post_form }
   return render(request, 'profile.html', context)
 
 def user_edit(request):
