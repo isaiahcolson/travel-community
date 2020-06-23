@@ -113,8 +113,9 @@ def city_index(request):
 
 # Define the CITY_detail view
 def city_detail(request, city_id):
-  city = City.objects.get(id=city_id)
-  context = { 'city' : city }
+  city = City.objects.all()
+  city_id = City.objects.get(id=city_id)
+  context = { 'city':city, 'city_id':city_id }
   return render(request, 'city/detail.html', context)
 
 

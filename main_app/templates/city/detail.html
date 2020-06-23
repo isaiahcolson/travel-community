@@ -3,11 +3,12 @@
 
 
 
+  {% include '../partials/city_nav.html' %}
 
   <div class="profile-body">
       <div class="user-articles">
-        <h1>{{ city.name }}</h1>
-        <p>{{ city.country }}</p>
+        <h1>{{ city_id.name }}</h1>
+        <p>{{ city_id.country }}</p>
         <a id="create-post-button">+</a>
       </div>
   </div>
