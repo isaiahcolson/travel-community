@@ -485,5 +485,4 @@ input[type=submit]:hover {
     font-weight: 900;
     text-decoration: none;
     color: var(--light);
-    /* width: 320px; */
 }
