@@ -308,6 +308,7 @@ input[type=submit]:hover {
 
 
 
+/* TODO Remove this section */
 .profile-body {
     font-size: 1.1em;
     font-family: var(--serif-font);
@@ -445,4 +446,16 @@ input[type=submit]:hover {
 
 #delete-post-confirm:hover {
     background-color: var(--accent-dark);
+}
+
+
+
+
+
+/* SECTION city details and show pages */
+.cities-list {
+    background-color: var(--dark);
+    height: 100vh;
+    width: 30vw;
+    position: absolute;
 }
