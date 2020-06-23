@@ -306,9 +306,6 @@ input[type=submit]:hover {
     margin: 25px 0;
 }
 
-
-
-/* TODO Remove this section */
 .profile-body {
     font-size: 1.1em;
     font-family: var(--serif-font);
@@ -493,4 +490,17 @@ input[type=submit]:hover {
     font-weight: 900;
     text-decoration: none;
     color: var(--light);
+}
+
+.city-body {
+    font-size: 1.1em;
+    font-family: var(--serif-font);
+    background-color: var(--light);
+    height: 100%;
+    margin: 0;
+    margin-left: 40vw;
+    padding: 100px 7.5vw 0 7.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
 }
