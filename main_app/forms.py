@@ -18,4 +18,4 @@ class EditUserForm(forms.ModelForm):
 class Post_Form(ModelForm):
     class Meta:
         model = User_Post
-        fields = ['title', 'date', 'city', 'content']
+        fields = ['title', 'city', 'content']
