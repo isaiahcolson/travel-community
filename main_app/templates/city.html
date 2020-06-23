@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% for city in city %}
+  <div class="profile-body">
+    <a href="{% url 'city_detail' city.id %}">
+      <div class="user-articles">
+      {{ city.name }}
 
-<div class="profile-body">
-  <div class="user-articles">
-  {% for city in city %}
-    <h1>{{ city.name }}</h1>
-    <p>{{ city.country }}</p>
-    <img src="" alt="">
-  {% endfor %}
-
-  
-    <!-- Replace list of cities with list of posts -->
-      <p>My City is - >{{ city.name }}</p>
-
+      </div>
+    </a>
   </div>
-</div>
+{% endfor %}
 
 {% endblock %}
