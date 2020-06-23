@@ -35,7 +35,24 @@
         <span class="modal-close delete-post-close">+</span>
     </div>
     <div class="modal-underlay" id="delete-post-underlay"></div>
-</div>
+  </div>
+  <div class="modal-bg" id="edit-post">
+    <div class="modal-small">
+      <div class="modal-header">
+          <h2>Edit Post</h2>
+      </div>
+      <form action="" method="POST">
+
+        {% csrf_token %}
+        {{ post_form.as_p }}
+        <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
+        <input id="" type="submit" value="Edit Post"> 
+
+        </form>
+        <span class="modal-close" id="edit-post-close">+</span>
+      </div>
+    <div class="modal-underlay" id="edit-post-underlay"></div>
+  </div>
 
   <div class="footer">
     <div class="footer-content">
