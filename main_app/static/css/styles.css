@@ -453,9 +453,37 @@ input[type=submit]:hover {
 
 
 /* SECTION city details and show pages */
-.cities-list {
+.cities-list-container {
     background-color: var(--dark);
     height: 100vh;
-    width: 30vw;
+    width: 360px;
     position: absolute;
+}
+
+.cities-list-container h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--light);
+    font-weight: 400;
+    padding-left: 25px;
+}
+
+.cities-list {
+    padding: 100px 25px;
+}
+
+.city-name {
+    background-color: var(--accent);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.cities-list a {
+    font-size: 2em;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--light);
+    /* width: 320px; */
 }

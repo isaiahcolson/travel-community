@@ -1,0 +1,16 @@
+<div class="cities-list-container">
+    <div class="cities-list">
+
+        <h2>Cities</h2>
+        {% for city in city %}
+            <div>
+                <a href="{% url 'city_detail' city.id %}">
+                    <div class="city-name">
+                    {{ city.name }}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
