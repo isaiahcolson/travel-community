@@ -70,7 +70,7 @@ def add_post(request):
       # new_post.save(commit=False)
       # new_post.city = request.city
       new_post.save()
-      return redirect('home')
+      return redirect("city_index")
   else:
     post_form = Post_Form()
   posts = User_Post.objects.filter(user=request.user)
