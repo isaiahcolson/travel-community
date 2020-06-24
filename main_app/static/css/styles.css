@@ -323,7 +323,6 @@ input[type=submit]:hover {
 
 .profile-body {
     font-size: 1.1em;
-    font-family: var(--serif-font);
     background-color: var(--light);
     height: 100%;
     margin: 0;
@@ -332,6 +331,14 @@ input[type=submit]:hover {
     display: flex;
     flex-direction: column;
     justify-content: top;
+}
+
+.profile-body p {
+    font-family: var(--serif-font);
+}
+
+.profile-body form p {
+    font-family: var(--general-font);
 }
 
 .profile-body h1 {
@@ -416,6 +423,7 @@ input[type=submit]:hover {
 
 .post-content p {
     margin-top: 25px;
+    font-family: var(--serif-font);
 }
 
 .delete-post-content {
@@ -470,7 +478,7 @@ input[type=submit]:hover {
     background-color: var(--dark);
     height: 100vh;
     width: 360px;
-    position: absolute;
+    position: fixed;
 }
 
 .cities-list-container h2 {
@@ -512,23 +520,19 @@ input[type=submit]:hover {
     font-size: 1.1em;
     font-family: var(--general-font);
     background-color: var(--light);
-    height: 100%;
     margin: 0;
-    /* margin-left: 40vw; */
-    /* padding: 100px 7.5vw 0 7.5vw; */
     display: flex;
     flex-direction: column;
     justify-content: top;
 }
 
 .city-header {
-    /* width: 100vw; */
     margin-left: 360px;
     padding: 100px 7.5vw 50px 7.5vw;
-    background-image: url('../images/wf-sf-bg.png');
+    /* background-image: url('../images/wf-mainlogo.png'); */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
 
 .city-header h1 {
@@ -547,5 +551,63 @@ input[type=submit]:hover {
 }
 
 .city-posts {
-    margin-left: 40vw;
+    margin-left: 360px;
+    padding: 0 50px;
+    position: relative;
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+}
+
+.city-posts h2 {
+    font-weight: 400;
+    padding: 0;
+}
+
+#create-post-button {
+    font-size: 1.75em;
+    font-weight: 900;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 100%;
+    color: var(--light);
+    background-color: var(--accent4);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#create-post-button:hover {
+    background-color: var(--accent4-dark);
+}
+
+.city-ind-post {
+    margin: 10px 0;
+    padding: 20px;
+    border: solid 1px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #FCFCFC;
+    box-shadow: none;
+    transition: 0.3s ease;
+}
+
+.city-ind-post:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.city-ind-container a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.city-ind-container p {
+    margin: 0;
+    margin-top: 5px;
+    font-family: var(--serif-font);
+}
+
+.city-ind-container h3 {
+    margin: 0;
+    margin-bottom: 5px;
 }

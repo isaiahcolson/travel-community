@@ -17,11 +17,13 @@
     <header>
         <nav>
             <ul>
-                <li style="float:left"><a href="/">Wayfarer</a></li>
+                
                 {% if user.is_authenticated %}
+                    <li style="float:left"><a href="/cities/1/">Wayfarer</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
                     <li><a href="{% url 'profile' user_id=user.pk %}">Profile</a></li>
                 {% else %}
+                <li style="float:left"><a href="/">Wayfarer</a></li>
                     <li><a id="signup-modal-button">Sign Up</a></li>
                     <li><a id="login-modal-button">Log In</a></li>
                 {% endif %}

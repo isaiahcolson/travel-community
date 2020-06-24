@@ -6,28 +6,40 @@
   {% include '../partials/city_nav.html' %}
 
   <div class="city-body">
-      <div class="city-header">
-        <h1>{{ city_id.name }}</h1>
-        <p>{{ city_id.country }}</p>
-      </div>
-      <div class="city-posts">
-        <a id="create-post-button">+</a>
-        {% for post in posts %}
-          <a href="{% url 'posts_detail' post.id %}"><h3>{{post.title}}</h3></a>
-          <p>{{post.content}}</p>
-        {% endfor %}
-      </div>
+    <div class="city-header" style="background-image: url('../../static/images/{{city_id.name}}.png');">
+      <h1>{{ city_id.name }}</h1>
+      <p>{{ city_id.country }}</p>
+    </div>
+    <div class="city-posts">
+      <a id="create-post-button">+</a>
+      <h2>Posts</h2>
+
+      {% for post in posts %}
+        <div class="city-ind-container">
+          <a href="{% url 'posts_detail' post.id %}">
+            <div class="city-ind-post">
+              <h3>{{post.title}}</h3>
+              <p>{{post.content}}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+
+    </div>
   </div>
 
   <div class="modal-bg" id="create-post">
-    <div class="modal">
+    <div class="modal-wide">
         <div class="modal-header">
             <h2>Create Post</h2>
         </div>
         <form action="{% url 'city_detail' city_id.id %}" method="POST">
 
             {% csrf_token %}
-            {{ post_form.as_p }}
+            {% for field in post_form %}
+              <p>{{ field.label }}</p>
+              {{ field }}
+            {% endfor %}
             <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
             <input id="add-post-button" type="submit" value="Add Post"> 
 

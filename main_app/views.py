@@ -156,4 +156,4 @@ def posts_edit(request, post_id):
 # update redirect to city index/detail page once city model and detail page is created
 def posts_delete(request, post_id):
   User_Post.objects.get(id=post_id).delete()
-  return redirect('city_index')
+  return redirect('city_detail', city_id=1)
