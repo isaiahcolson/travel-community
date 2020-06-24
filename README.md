@@ -57,9 +57,9 @@ My List
 [x] - style add post button
 [x] - style post in cities
 [x] - remove footer from post detail page
-[ ] - fix font-size for forms
-[ ] - play around with burn effect on photos
-[ ] - reroute to city detail page after deleting a post
+[x] - fix font-size for forms
+[x] - play around with burn effect on photos
+[x] - reroute to San Francisco detail page after deleting a post
 [ ] - change photo for unique cities
 [ ] - bring in Xenia's work
 [ ] - sort list of posts by newest first
