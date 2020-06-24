@@ -170,9 +170,10 @@ input, textarea {
     background-color: var(--light-alt);
     width: 100%;
     font-size: 1em;
+    font-family: var(--general-font);
 }
 
-input:focus {
+input:focus, textarea:focus {
     border: 2px solid var(--accent4);
 }
 

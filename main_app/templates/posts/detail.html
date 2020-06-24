@@ -48,7 +48,7 @@
       <p><label for="city">City</label></p>
       <input type="text" name="city" value="{{ post.city }}">
       <p><label for="content">Content</label></p>
-      <textarea name="content">{{ post.content }}</textarea>
+      <textarea name="content" rows="7">{{ post.content }}</textarea>
       <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
       <input type="submit" value="Edit Post"> 
 
