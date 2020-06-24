@@ -25,9 +25,10 @@
       <div class="user-articles">
         <h1>Posts By {{ users.first_name }}</h1>
 
-        {% for post in post %}
+        {% for post in posts %}
 
-          <p>June 2020 - <a href="/posts/{{post.post_id}}">{{ post.title }}</a></p>
+          <a href="{% url 'posts_detail' post.id %}"><h3>{{post.title}}</h3></a>
+          <p>{{post.content}}</p>
 
         {% endfor %}
 

@@ -11,20 +11,20 @@ from .models import MyUser, User_Post, City
 
 
 # --- TEMPORARY POST MODEL --- #
-class Post:
-  def __init__(self, post_id, title, city, author, year, month, day, content):
-    self.post_id = post_id
-    self.title = title
-    self.city = city
-    self.author = author
-    post_date = datetime.datetime(year, month, day)
-    self.post_date = (post_date.strftime("%B %Y"))
-    self.content = content
+# class Post:
+#   def __init__(self, post_id, title, city, author, year, month, day, content):
+#     self.post_id = post_id
+#     self.title = title
+#     self.city = city
+#     self.author = author
+#     post_date = datetime.datetime(year, month, day)
+#     self.post_date = (post_date.strftime("%B %Y"))
+#     self.content = content
 
-posts = [
-  Post(0, 'Review of London', 'London', 'Goofy Goof', 2020, 6, 19, 'lots of history; cheeky people; good pints'),
-  Post(1, 'Good Times in Montreal', 'Montreal', 'Goofy Goof', 2020, 6, 20, 'eclectic neighborhoods; great views from the top of Mount Royal')
-]
+# posts = [
+#   Post(0, 'Review of London', 'London', 'Goofy Goof', 2020, 6, 19, 'lots of history; cheeky people; good pints'),
+#   Post(1, 'Good Times in Montreal', 'Montreal', 'Goofy Goof', 2020, 6, 20, 'eclectic neighborhoods; great views from the top of Mount Royal')
+# ]
 
 
 def home(request):
@@ -66,7 +66,8 @@ def profile(request, user_id, city='Add Your City'):
   users_id = MyUser.objects.get(user_id=user_id)
   city = users_id.city
   post_form = Post_Form()
-  context = { 'users': users, 'city': city, 'post': posts, 'post_form': post_form }
+  posts = User_Post.objects.filter(user=request.user)
+  context = { 'users': users, 'city': city, 'posts': posts, 'post_form': post_form }
   return render(request, 'profile.html', context)
 
 def user_edit(request):
@@ -93,7 +94,7 @@ def city_index(request):
   context = { 'city':city }
   return render(request, 'city.html', context)
 
-# Define the CITY_detail view
+# Define the CITY_detail view AND create User_Post
 def city_detail(request, city_id):
   city = City.objects.all()
   city_id = City.objects.get(id=city_id)
@@ -107,9 +108,8 @@ def city_detail(request, city_id):
       return redirect("city_detail", city_id=city_id.id)
   else:
     post_form = Post_Form()
-  # post_form = Post_Form()
-  post = User_Post.objects.filter(user=request.user)
-  context = { 'city':city, 'city_id':city_id, 'post_form': post_form, 'post': post }
+  posts = User_Post.objects.filter(user=request.user, city=city_id.id)
+  context = { 'city':city, 'city_id':city_id, 'post_form': post_form, 'posts': posts }
   return render(request, 'city/detail.html', context)
 
 
@@ -132,7 +132,7 @@ def city_detail(request, city_id):
 
 def posts_detail(request, post_id):
   post = User_Post.objects.get(id=post_id)
-  context = { 'post':post }
+  context = { 'post': post }
   return render(request, 'posts/detail.html', context)
 
 def posts_edit(request, post_id):
@@ -156,4 +156,4 @@ def posts_edit(request, post_id):
 # update redirect to city index/detail page once city model and detail page is created
 def posts_delete(request, post_id):
   User_Post.objects.get(id=post_id).delete()
-  return redirect('home')
+  return redirect('city_index')
