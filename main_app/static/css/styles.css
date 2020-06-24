@@ -157,7 +157,7 @@ form {
     justify-content: center;
 }
 
-input {
+input, textarea {
     padding: 15px 20px;
     margin: 0;
     display: inline-block;

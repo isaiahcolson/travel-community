@@ -37,7 +37,7 @@
     <div class="modal-underlay" id="delete-post-underlay"></div>
   </div>
   <div class="modal-bg" id="edit-post">
-    <div class="modal-small">
+    <div class="modal">
       <div class="modal-header">
         <h2>Edit Post</h2>
       </div>
@@ -48,7 +48,7 @@
       <p><label for="city">City</label></p>
       <input type="text" name="city" value="{{ post.city }}">
       <p><label for="content">Content</label></p>
-      <input type="textarea" name="content" value="{{ post.content }}">
+      <textarea name="content">{{ post.content }}</textarea>
       <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
       <input type="submit" value="Edit Post"> 
 
