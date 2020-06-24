@@ -39,18 +39,22 @@
   <div class="modal-bg" id="edit-post">
     <div class="modal-small">
       <div class="modal-header">
-          <h2>Edit Post</h2>
+        <h2>Edit Post</h2>
       </div>
       <form action="" method="POST">
 
-        {% csrf_token %}
-        {{ post_form.as_p }}
-        <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
-        <input id="" type="submit" value="Edit Post"> 
+      <p><label for="title">Title</label></p>
+      <input type="text" name="title" value="{{ post.title }}">
+      <p><label for="city">City</label></p>
+      <input type="text" name="city" value="{{ post.city }}">
+      <p><label for="content">Content</label></p>
+      <input type="textarea" name="content" value="{{ post.content }}">
+      <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
+      <input type="submit" value="Edit Post"> 
 
-        </form>
-        <span class="modal-close" id="edit-post-close">+</span>
-      </div>
+      </form>
+      <span class="modal-close" id="edit-post-close">+</span>
+    </div>
     <div class="modal-underlay" id="edit-post-underlay"></div>
   </div>
 

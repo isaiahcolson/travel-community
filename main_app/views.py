@@ -100,7 +100,7 @@ def user_edit(request):
       return redirect('profile', user_id=current_user.pk)
   else:
     edit_form = UserChangeForm(instance=request.user)
-  context = {'edit_form': edit_form, 'current_user': current_user}
+  context = {'edit_form':edit_form, 'current_user':current_user}
   return render(request, 'profile.html', context)
 
 
@@ -108,7 +108,7 @@ def user_edit(request):
 # Define the CITY_index view
 def city_index(request):
   city = City.objects.all()
-  context = { 'city' : city }
+  context = { 'city':city }
   return render(request, 'city.html', context)
 
 # Define the CITY_detail view
@@ -134,8 +134,8 @@ def posts_edit(request, post_id):
       return redirect('posts_detail', post_id=post_id)
   else:
     post_form = Post_Form(instance=post)
-  context = {'post': post, 'post_form': post_form}
-  return render(request, 'posts/edit.html', context)
+  context = {'post':post, 'post_form':post_form}
+  return render(request, 'posts/detail.html', context)
 
 # update redirect to city index/detail page once city model and detail page is created
 def posts_delete(request, post_id):
