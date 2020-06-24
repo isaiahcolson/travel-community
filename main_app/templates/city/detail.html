@@ -12,7 +12,29 @@
       </div>
       <div class="city-posts">
         <a id="create-post-button">+</a>
+        {% for post in posts %}
+          <a href="{% url 'posts_detail' post.id %}"><h3>{{post.title}}</h3></a>
+          <p>{{post.content}}</p>
+        {% endfor %}
       </div>
+  </div>
+
+  <div class="modal-bg" id="create-post">
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Create Post</h2>
+        </div>
+        <form action="{% url 'city_detail' city_id.id %}" method="POST">
+
+            {% csrf_token %}
+            {{ post_form.as_p }}
+            <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
+            <input id="add-post-button" type="submit" value="Add Post"> 
+
+        </form>
+        <span class="modal-close" id="create-post-close">+</span>
+    </div>
+    <div class="modal-underlay" id="create-post-underlay"></div>
   </div>
 
 
