@@ -29,7 +29,7 @@
           <p>You are about to delete the post "{{ post.title }}". This cannot be undone, are you sure you would like to proceed?</p>
           <div class="delete-post-content__buttons">
             <a class="delete-post-close">Cancel</a>
-            <a href={% url 'posts_delete' post.id %} id="delete-post-confirm">Delete</a>
+            <a href="{% url 'posts_delete' post.id %}" id="delete-post-confirm">Delete</a>
           </div>
         </div>
         <span class="modal-close delete-post-close">+</span>
