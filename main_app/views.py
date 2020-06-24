@@ -61,23 +61,6 @@ def wayfarer_index(request):
   return render(request, 'wayfarer/index.html')
 
 
-def add_post(request):
-  if request.method == 'POST':
-    post_form = Post_Form(request.POST)
-    if post_form.is_valid():
-      new_post = post_form.save(commit=False)
-      new_post.user = request.user
-      # new_post.save(commit=False)
-      # new_post.city = request.city
-      new_post.save()
-      return redirect("city_detail", new_post.city.id)
-  else:
-    post_form = Post_Form()
-  posts = User_Post.objects.filter(user=request.user)
-  context = { 'post': posts, 'post_form': post_form }
-  return render(request, 'profile.html', context)
-
-
 def profile(request, user_id, city='Add Your City'):
   users = User.objects.get(pk=user_id)
   users_id = MyUser.objects.get(user_id=user_id)
@@ -115,11 +98,26 @@ def city_index(request):
 def city_detail(request, city_id):
   city = City.objects.all()
   city_id = City.objects.get(id=city_id)
-  context = { 'city':city, 'city_id':city_id }
+  post_form = Post_Form()
+  context = { 'city':city, 'city_id':city_id, 'post_form': post_form }
   return render(request, 'city/detail.html', context)
 
 
-# --- POST ROUTES (R.U.D.) --- #
+# --- POST ROUTES (C.R.U.D.) --- #
+def add_post(request):
+  if request.method == 'POST':
+    post_form = Post_Form(request.POST)
+    if post_form.is_valid():
+      new_post = post_form.save(commit=False)
+      new_post.user = request.user
+      new_post.save()
+      return redirect("city_detail", new_post.city.id)
+  # else:
+  #   post_form = Post_Form()
+  # posts = User_Post.objects.filter(user=request.user)
+  # context = { 'post': posts, 'post_form': post_form }
+  # return render(request, 'profile.html', context)
+
 def posts_detail(request, post_id):
   post = User_Post.objects.get(id=post_id)
   context = { 'post' : post }
