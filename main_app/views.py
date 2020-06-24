@@ -97,22 +97,32 @@ def city_index(request):
 def city_detail(request, city_id):
   city = City.objects.all()
   city_id = City.objects.get(id=city_id)
-  post_form = Post_Form()
-  post = User_Post.objects.all()
-  context = { 'city':city, 'city_id':city_id, 'post_form': post_form, 'post': post }
-  return render(request, 'city/detail.html', context)
-
-
-# --- POST ROUTES (C.R.U.D.) --- #
-def add_post(request):
   if request.method == 'POST':
     post_form = Post_Form(request.POST)
     if post_form.is_valid():
       new_post = post_form.save(commit=False)
       new_post.user = request.user
-      # new_post.city_id = city_id
+      new_post.city_id = city_id.id
       new_post.save()
-      return redirect("city_detail", new_post.city.id)
+      return redirect("city_detail", city_id=city_id.id)
+  else:
+    post_form = Post_Form()
+  # post_form = Post_Form()
+  post = User_Post.objects.filter(user=request.user)
+  context = { 'city':city, 'city_id':city_id, 'post_form': post_form, 'post': post }
+  return render(request, 'city/detail.html', context)
+
+
+# --- POST ROUTES (C.R.U.D.) --- #
+# def add_post(request):
+#   if request.method == 'POST':
+#     post_form = Post_Form(request.POST)
+#     if post_form.is_valid():
+#       new_post = post_form.save(commit=False)
+#       new_post.user = request.user
+#       # new_post.city_id = city_id
+#       new_post.save()
+#       return redirect("city_detail", new_post.city.id)
       # return redirect("city_detail", city_id=city_id)
   # else:
   #   post_form = Post_Form()
@@ -146,8 +156,4 @@ def posts_edit(request, post_id):
 # update redirect to city index/detail page once city model and detail page is created
 def posts_delete(request, post_id):
   User_Post.objects.get(id=post_id).delete()
-<<<<<<< HEAD
   return redirect('home')
-=======
-  return redirect('city_index')
->>>>>>> submaster

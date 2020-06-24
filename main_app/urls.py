@@ -8,7 +8,7 @@ urlpatterns = [
   path('login/', views.user_login, name='user_login'),
   path('profile/edit', views.user_edit, name='user_edit'),
   # change add_post path to cities/city_id after city model creation
-  path('add_post/', views.add_post, name='add_post'),
+  # path('add_post/<int:city_id>/', views.add_post, name='add_post'),
   path('posts/<int:post_id>/', views.posts_detail, name='posts_detail'),
   path('posts/<int:post_id>/edit', views.posts_edit, name='posts_edit'),
   path('posts/<int:post_id>/delete', views.posts_delete, name='posts_delete'),
