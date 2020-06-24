@@ -522,7 +522,6 @@ input[type=submit]:hover {
 }
 
 .city-header {
-    /* width: 100vw; */
     margin-left: 360px;
     padding: 100px 7.5vw 50px 7.5vw;
     background-image: url('../images/wf-sf-bg.png');
@@ -551,11 +550,18 @@ input[type=submit]:hover {
     position: relative;
 }
 
+.city-posts h2 {
+    font-weight: 400;
+    padding: 0;
+}
+
 #create-post-button {
+    font-size: 1.75em;
+    font-weight: 900;
     position: absolute;
     right: 40px;
     top: 20px;
-    padding: 10px 18px;
+    padding: 0 13px;
     border: none;
     border-radius: 100%;
     color: var(--light);
@@ -569,7 +575,8 @@ input[type=submit]:hover {
 }
 
 .city-ind-post {
-    margin-top: 60px;
+    margin-top: 40px;
+    /* overflow: scroll; */
 }
 
 .city-ind-post a {
