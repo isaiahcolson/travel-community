@@ -99,7 +99,8 @@ def city_detail(request, city_id):
   city = City.objects.all()
   city_id = City.objects.get(id=city_id)
   post_form = Post_Form()
-  context = { 'city':city, 'city_id':city_id, 'post_form': post_form }
+  post = User_Post.objects.all()
+  context = { 'city':city, 'city_id':city_id, 'post_form': post_form, 'post': post }
   return render(request, 'city/detail.html', context)
 
 

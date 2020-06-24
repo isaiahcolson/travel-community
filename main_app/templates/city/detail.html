@@ -12,7 +12,7 @@
       </div>
       <div class="city-posts">
         <a id="create-post-button">+</a>
-        {% for post in Post.city_set.all %}
+        {% for post in post %}
           <h3>{{post.title}}</h3>
           <p>{{post.content}}</p>
         {% endfor %}
