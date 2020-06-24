@@ -323,7 +323,6 @@ input[type=submit]:hover {
 
 .profile-body {
     font-size: 1.1em;
-    font-family: var(--serif-font);
     background-color: var(--light);
     height: 100%;
     margin: 0;
@@ -332,6 +331,14 @@ input[type=submit]:hover {
     display: flex;
     flex-direction: column;
     justify-content: top;
+}
+
+.profile-body p {
+    font-family: var(--serif-font);
+}
+
+.profile-body form p {
+    font-family: var(--general-font);
 }
 
 .profile-body h1 {
@@ -416,6 +423,7 @@ input[type=submit]:hover {
 
 .post-content p {
     margin-top: 25px;
+    font-family: var(--serif-font);
 }
 
 .delete-post-content {
@@ -596,6 +604,7 @@ input[type=submit]:hover {
 .city-ind-container p {
     margin: 0;
     margin-top: 5px;
+    font-family: var(--serif-font);
 }
 
 .city-ind-container h3 {

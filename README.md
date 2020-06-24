@@ -60,7 +60,7 @@ My List
 [x] - fix font-size for forms
 [x] - play around with burn effect on photos
 [x] - reroute to San Francisco detail page after deleting a post
-[ ] - change photo for unique cities
+[x] - change photo for unique cities
 [ ] - bring in Xenia's work
 [ ] - sort list of posts by newest first
 [ ] - add a back to cities button at the bottom of post
