@@ -55,7 +55,8 @@
 My List
 [x] - change wayfarer logo to link to cities page for users
 [x] - style add post button
-[ ] - style post in cities
+[x] - style post in cities
+[ ] - remove footer from post detail page
 [ ] - fix font-size for forms
 [ ] - reroute to city detail page after deleting a post
 [ ] - change photo for unique cities
