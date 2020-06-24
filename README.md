@@ -8,33 +8,29 @@
 
 **A user should be able to:**
 
-1. [x] Navigate to "/" and see a basic splash page with:
-- [x] The name of the website.
-- [x] Links to "Log In" and "Sign Up".
-2. [x] Sign up for an account.
-3. [x] Log in to their account if they already have one.
-4. [x] Be redirected to their public profile page after logging in.
-<<<<<<< HEAD
-5. [] On their public profile page, see their name, the current city they have set in their profile, and their join date.
-=======
-5. [x] On their public profile page, see their name, the current city they have set in their profile, and their join date.
->>>>>>> submaster
-6. [x] See the site-wide header on every page with:
-- [x] A link to "Log Out" if they're logged in.
-- [x] Links to "Log In" and "Sign Up" if they're logged out.
-7. [x] Update their profile by making changes to their name and/or current city.
-8. [x] See the titles of all the posts they've contributed (start with pre-seeded data).
-9. [x] Click on the title of one of their posts and be redirected to a "show" page for that post.
-10. [x] View post "show" pages with title, author, and content.
+1. Navigate to "/" and see a basic splash page with:
+- The name of the website.
+- Links to "Log In" and "Sign Up".
+2. Sign up for an account.
+3. Log in to their account if they already have one.
+4. Be redirected to their public profile page after logging in.
+5. On their public profile page, see their name, the current city they have set in their profile, and their join date.
+6. See the site-wide header on every page with:
+- A link to "Log Out" if they're logged in.
+- Links to "Log In" and "Sign Up" if they're logged out.
+7. Update their profile by making changes to their name and/or current city.
+8. See the titles of all the posts they've contributed (start with pre-seeded data).
+9. Click on the title of one of their posts and be redirected to a "show" page for that post.
+10. View post "show" pages with title, author, and content.
 
 ### Bonuses
 
 **A user should be able to:**
 
-1. [ ] See a "default" profile photo on their profile page before adding their own photo.
-2. [ ] Update their profile photo (consider using Paperclip or Uploadcare).
-3. [ ] See their profile photo next to their posts.
-4. [ ] Receive a welcome email after creating an account.
+1. See a "default" profile photo on their profile page before adding their own photo.
+2. Update their profile photo (consider using Paperclip or Uploadcare).
+3. See their profile photo next to their posts.
+4. Receive a welcome email after creating an account.
 
 ---
 
@@ -46,15 +42,26 @@
 - [x] The site-wide header.
 - [x] The name of the city.
 - [x] An iconic photo of the city.
-2. [ ] View a list of posts on the San Francisco page:
+2. [x] View a list of posts on the San Francisco page:
 - [ ] Sorted by newest first.
-- [ ] With the post titles linked to the individual post "show" pages.
-3. [ ] Use an "Add New Post" button on the San Francisco city page to pull up the new post form.
-4. [ ] Create a new post for San Francisco<!--(**Hint:** <a href="http://guides.rubyonrails.org/routing.html#nested-resources" target="_blank">nested resources</a>)-->.
-5. [ ] Click "Edit" on ANY individual post, and be redirected to the edit form.
-6. [ ] Click "delete" on ANY individual post, then:
+- [x] With the post titles linked to the individual post "show" pages.
+3. [x] Use an "Add New Post" button on the San Francisco city page to pull up the new post form.
+4. [x] Create a new post for San Francisco.
+5. [x] Click "Edit" on ANY individual post, and be redirected to the edit form.
+6. [x] Click "delete" on ANY individual post, then:
 - [x] See a pop-up that says: "Are you sure you want to delete #{title}?"
 - [x] If the user confirms, delete the post.
+
+My List
+[x] - change wayfarer logo to link to cities page for users
+[ ] - style add post button
+[ ] - style post in cities
+[ ] - reroute to city detail page after deleting a post
+[ ] - change photo for unique cities
+[ ] - bring in Xenia's work
+[ ] - sort list of posts by newest first
+[ ] - add a back to cities button at the bottom of post
+
 
 ### Bonuses
 
