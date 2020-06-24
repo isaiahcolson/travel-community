@@ -29,14 +29,17 @@
   </div>
 
   <div class="modal-bg" id="create-post">
-    <div class="modal">
+    <div class="modal-wide">
         <div class="modal-header">
             <h2>Create Post</h2>
         </div>
         <form action="{% url 'city_detail' city_id.id %}" method="POST">
 
             {% csrf_token %}
-            {{ post_form.as_p }}
+            {% for field in post_form %}
+              <p>{{ field.label }}</p>
+              {{ field }}
+            {% endfor %}
             <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
             <input id="add-post-button" type="submit" value="Add Post"> 
 
