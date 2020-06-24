@@ -79,6 +79,7 @@ $('#create-post-underlay').click(function() {
 });
 
 
+
 /* delete post modal events */
 $('#delete-post-button').click(function() {
     $('#delete-post').addClass('modal-active');
@@ -92,5 +93,23 @@ $('.delete-post-close').click(function() {
 
 $('#delete-post-underlay').click(function() {
     $('#delete-post').removeClass('modal-active');
+    $(document.body).css('overflow', 'visible');
+});
+
+
+
+/* edit post modal events */
+$('#edit-post-button').click(function() {
+    $('#edit-post').addClass('modal-active');
+    $(document.body).css('overflow', 'hidden');
+});
+
+$('#edit-post-close').click(function() {
+    $('#edit-post').removeClass('modal-active');
+    $(document.body).css('overflow', 'visible');
+});
+
+$('#edit-post-underlay').click(function() {
+    $('#edit-post').removeClass('modal-active');
     $(document.body).css('overflow', 'visible');
 });

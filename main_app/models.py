@@ -26,7 +26,6 @@ class User_Post(models.Model):
   def __str__(self):
     return f"{self.title} on {self.date}"
 
-
   class Meta:
     ordering = ['-date', 'city']
 
