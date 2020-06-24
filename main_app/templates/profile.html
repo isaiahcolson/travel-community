@@ -68,19 +68,19 @@
 
     <!-- Create new post modal -- MIGRATE TO CITIES INDEX -->
     <div class="modal-bg" id="create-post">
-      <div class="modal">
-          <div class="modal-header">
-              <h2>Create Post</h2>
-          </div>
-          <form action="{% url 'add_post' %}" method="POST">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Create Post</h2>
+            </div>
+            <form action="{% url 'add_post' %}" method="POST">
 
-              {% csrf_token %}
-              {{ post_form.as_p }}
-              <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
-              <input id="add-post-button" type="submit" value="Add Post"> 
+                {% csrf_token %}
+                {{ post_form.as_p }}
+                <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
+                <input id="add-post-button" type="submit" value="Add Post"> 
 
-          </form>
-          <span class="modal-close" id="create-post-close">+</span>
+            </form>
+            <span class="modal-close" id="create-post-close">+</span>
         </div>
         <div class="modal-underlay" id="create-post-underlay"></div>
     </div>
