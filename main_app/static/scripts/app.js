@@ -113,22 +113,3 @@ $('#edit-post-underlay').click(function() {
     $('#edit-post').removeClass('modal-active');
     $(document.body).css('overflow', 'visible');
 });
-
-
-
-/* city header image changer */
-let cityImage = () => {
-    let pathname = window.location.pathname;
-    if (pathname == '/cities/1/') {
-        console.log('SF');
-        let imageUrl = '../images/wf-sf-bg.png';
-        $('.city-header').css("background-image", `url(${imageUrl})`);
-    } else if (pathname == '/cities/2/') {
-        console.log('London');
-    } else {
-        console.log('Not Working');
-    }
-    console.log(pathname);
-}
-
-// cityImage();
