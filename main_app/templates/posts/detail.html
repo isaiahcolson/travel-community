@@ -29,7 +29,7 @@
           <p>You are about to delete the post "{{ post.title }}". This cannot be undone, are you sure you would like to proceed?</p>
           <div class="delete-post-content__buttons">
             <a class="delete-post-close">Cancel</a>
-            <a id="delete-post-confirm">Delete</a>
+            <a href="{% url 'posts_delete' post.id %}" id="delete-post-confirm">Delete</a>
           </div>
         </div>
         <span class="modal-close delete-post-close">+</span>
@@ -52,6 +52,7 @@
         <p><label for="content">Content</label></p>
         <textarea name="content" rows="7">{{ post.content }}</textarea>
         <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
+        <input type="hidden" value="{{ post_id }}">
         <input type="submit" value="Edit Post"> 
 
       </form>

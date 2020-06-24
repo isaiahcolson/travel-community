@@ -444,6 +444,7 @@ input[type=submit]:hover {
     color: var(--dark);
     transition: 0.2s ease;
     font-weight: 700;
+    text-decoration: none;
 }
 
 .delete-post-content a:hover {
