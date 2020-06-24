@@ -96,11 +96,10 @@ def user_edit(request):
     edit_form = EditUserForm(request.POST, instance=request.user)
     if edit_form.is_valid():
       edit_form.save()
-      # city = users_id.city
       return redirect('profile', user_id=current_user.pk)
   else:
     edit_form = UserChangeForm(instance=request.user)
-  context = {'edit_form': edit_form, 'current_user': current_user}
+  context = { 'edit_form':edit_form, 'current_user':current_user }
   return render(request, 'profile.html', context)
 
 
@@ -108,7 +107,7 @@ def user_edit(request):
 # Define the CITY_index view
 def city_index(request):
   city = City.objects.all()
-  context = { 'city' : city }
+  context = { 'city':city }
   return render(request, 'city.html', context)
 
 # Define the CITY_detail view
@@ -122,22 +121,28 @@ def city_detail(request, city_id):
 # --- POST ROUTES (R.U.D.) --- #
 def posts_detail(request, post_id):
   post = User_Post.objects.get(id=post_id)
-  context = { 'post' : post }
+  context = { 'post':post }
   return render(request, 'posts/detail.html', context)
 
 def posts_edit(request, post_id):
+  error_message = ''
   post = User_Post.objects.get(id=post_id)
   if request.method == 'POST':
     post_form = Post_Form(request.POST, instance=post)
     if post_form.is_valid():
+      print('valid')
       post_form.save()
       return redirect('posts_detail', post_id=post_id)
+    else:
+      print('not valid')
   else:
+    print('check3')
     post_form = Post_Form(instance=post)
-  context = {'post': post, 'post_form': post_form}
-  return render(request, 'posts/edit.html', context)
+  print('end check')
+  context = { 'post':post, 'post_form':post_form }
+  return render(request, 'posts/detail.html', context)
 
 # update redirect to city index/detail page once city model and detail page is created
 def posts_delete(request, post_id):
-  Post.objects.get(id=post_id).delete()
-  return redirect('home')
+  User_Post.objects.get(id=post_id).delete()
+  return redirect('city_index')

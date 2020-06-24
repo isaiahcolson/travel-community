@@ -16,7 +16,7 @@
         <a id="edit-post-button">Edit</a>
         <a id="delete-post-button">Delete</a>
       </div>
-      <p>"... {{ post.content }} ..."</p>
+      <p>{{ post.content }}</p>
     </div>
   </div>
 
@@ -29,13 +29,37 @@
           <p>You are about to delete the post "{{ post.title }}". This cannot be undone, are you sure you would like to proceed?</p>
           <div class="delete-post-content__buttons">
             <a class="delete-post-close">Cancel</a>
-            <a id="delete-post-confirm">Delete</a>
+            <a href="{% url 'posts_delete' post.id %}" id="delete-post-confirm">Delete</a>
           </div>
         </div>
         <span class="modal-close delete-post-close">+</span>
     </div>
     <div class="modal-underlay" id="delete-post-underlay"></div>
-</div>
+  </div>
+  <div class="modal-bg" id="edit-post">
+    <div class="modal-wide">
+      <div class="modal-header">
+        <h2>Edit Post</h2>
+      </div>
+      <form action="{% url 'posts_edit' post.id %}" method="POST">
+
+        {% csrf_token %}
+
+        <p><label for="title">Title</label></p>
+        <input type="text" name="title" value="{{ post.title }}">
+        <p><label for="city">City</label></p>
+        <!-- <input type="selection" name="city" value="{{ post.city }}">
+        <p><label for="content">Content</label></p> -->
+        <textarea name="content" rows="7">{{ post.content }}</textarea>
+        <input type="hidden" name="date" value="{% now 'jS m d Y' %}">
+        <!-- <input type="hidden" value="{{ post_id }}"> -->
+        <input type="submit" value="Edit Post"> 
+
+      </form>
+      <span class="modal-close" id="edit-post-close">+</span>
+    </div>
+    <div class="modal-underlay" id="edit-post-underlay"></div>
+  </div>
 
   <div class="footer">
     <div class="footer-content">
